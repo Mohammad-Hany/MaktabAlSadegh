@@ -1418,6 +1418,7 @@ input, button, textarea, select, option, label, ::placeholder {
 /* Events Search Section */
 .events-search-section {
     background-color: var(--primary-green);
+    background-image: url("images/gplay.png");
     color: white;
     padding: 3rem 0;
     position: relative;
@@ -2425,6 +2426,7 @@ input, button, textarea, select, option, label, ::placeholder {
 /* Donate Page */
 .donate-hero {
     background-color: var(--primary-green);
+    background-image: url("images/gplay.png");
     color: var(--beige);
     padding: 4rem 0;
     position: relative;
@@ -3486,7 +3488,8 @@ input, button, textarea, select, option, label, ::placeholder {
 }
 /* Page Hero Section */
 .page-hero {
-    background: linear-gradient(120deg, rgba(27,94,32,1) 0%, rgba(22,80,28,0.95) 35%, rgba(14,48,18,1) 100%);
+    background-color: var(--primary-green);
+    background-image: url("images/gplay.png");
     color: var(--beige);
     padding: 4rem 0;
     position: relative;
@@ -4575,3 +4578,821 @@ margin-right: auto; / Push it to the left */
     justify-content: space-between; /* Add this to ensure proper spacing */
     height: 75px;
 }}
+/* CSS: changed or added rules */
+@media (max-width: 768px) {
+    /* Optimize navbar logo */
+    .logo-text h1 {
+        font-size: 1.25rem;
+    }
+    
+    .logo-text span {
+        font-size: 0.5rem;
+    }
+    
+    .logo-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .logo-inner {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    
+    /* Optimize hero section */
+    .hero-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .hero-description {
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Optimize buttons */
+    .btn-primary, .btn-outline {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .hero-buttons {
+        gap: 0.75rem;
+    }
+    
+    /* Optimize section headers */
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    /* Optimize upcoming event */
+    .upcoming-event-details h3 {
+        font-size: 1.25rem;
+    }
+    
+    .upcoming-event-details .btn-primary {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Optimize event cards */
+    .event-title {
+        font-size: 0.875rem;
+    }
+    
+    .event-description {
+        font-size: 0.75rem;
+    }
+    
+    .event-detail-link {
+        font-size: 0.75rem;
+        padding: 0.375rem;
+    }
+    
+    /* Optimize founder cards */
+    .founder-name {
+        font-size: 1rem;
+    }
+    
+    .founder-role {
+        font-size: 0.75rem;
+    }
+    
+    /* Optimize comment section (for task 2) */
+    .comments-section {
+        padding: 2rem 0;
+    }
+    
+    .comment-card {
+        min-width: 85vw;
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .comment-rating {
+        display: none; /* Hide star rating on mobile */
+    }
+    
+    .comment-text {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+    
+    .comments-slider {
+        padding-bottom: 0.5rem;
+    }
+    
+    /* Optimize gallery section */
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    /* Fix spacing issues */
+    .section-spacer {
+        height: 2rem;
+    }
+    
+    .events-section, .founders-section, .gallery-section {
+        padding: 2.5rem 0;
+    }
+    
+    .upcoming-event-section {
+        padding: 2rem 0;
+    }
+    
+    /* Fix image scaling */
+    .event-card-image, .recent-event-image, .gallery-item {
+        min-height: 150px;
+    }
+    
+    /* Improve scrolling in comments */
+    .comments-slider-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .comments-slider {
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 1rem;
+    }
+    
+    /* Add comment form for mobile */
+    .comments-section .mobile-comment-form {
+        display: block;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .mobile-comment-form h4 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-green);
+        text-align: center;
+    }
+    
+    .mobile-comment-input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+        font-family: 'Vazirmatn', sans-serif;
+    }
+    
+    .mobile-comment-submit {
+        width: 100%;
+        background-color: var(--primary-green);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        font-size: 0.875rem;
+        font-family: 'Vazirmatn', sans-serif;
+    }
+    
+    /* Hide scroll indicators on mobile */
+    .scroll-indicators {
+        display: none;
+    }
+    
+    /* Adjust footer for mobile */
+    .footer-grid {
+        gap: 2rem;
+    }
+    
+    .footer-logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .footer-description {
+        font-size: 0.75rem;
+    }
+    
+    /* Fix overflow issues */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    /* Adjust spacing in upcoming event card */
+    .upcoming-event-details {
+        padding: 1.5rem;
+    }
+    
+    /* Optimize mobile menu logo */
+    .mobile-logo-text h2 {
+        font-size: 1rem;
+    }
+    
+    .mobile-logo-text span {
+        font-size: 0.5rem;
+    }
+    
+    /* Fix button overflow */
+    .event-detail-link, .see-more-link, .view-all-link {
+        white-space: nowrap;
+    }
+    
+    /* Adjust gallery grid */
+    .gallery-grid {
+        gap: 0.75rem;
+    }
+    
+    /* Ensure proper image scaling */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Fix comment slider height */
+    .comments-slider {
+        min-height: 180px;
+    }
+}
+
+/* Additional mobile optimization for very small screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .event-card {
+        margin: 0 0.5rem;
+    }
+    
+    .comment-card {
+        min-width: 90vw;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 1;
+    }
+}
+/* Modify the comments list container height */
+.comments-list-container {
+    max-height: 350px; /* Changed from 500px */
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Add mobile-specific height */
+@media (max-width: 768px) {
+    .comments-list-container {
+        max-height: 250px;
+    }
+    
+    .comments-slider {
+        height: 220px; /* Add fixed height for mobile */
+    }
+}
+
+/* Add comment form styles matching donate form */
+.comment-form-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.comment-form-container {
+    background-color: var(--gold);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 48rem;
+    margin: 0 auto;
+    background-image: url("images/light-wool.png");
+}
+
+.comment-form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.comment-form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .comment-form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .comment-form-grid textarea {
+        grid-column: span 2;
+    }
+}
+
+.comment-input, .comment-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-family: 'Vazirmatn', sans-serif;
+    transition: all 0.2s;
+}
+
+.comment-input:focus, .comment-textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+}
+
+.comment-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.comment-form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+@media (min-width: 640px) {
+    .comment-form-actions {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.comment-rating-input {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.comment-rating-input span {
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+}
+
+.stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.stars i {
+    color: var(--gold);
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: color 0.2s;
+}
+
+.stars i:hover {
+    color: var(--dark-gold);
+}
+
+.stars i.active {
+    color: var(--gold);
+}
+
+.submit-comment-btn {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submit-comment-btn:hover {
+    background-color: var(--dark-green);
+}
+@media (max-width: 768px) {
+    /* Optimize navbar for mobile */
+    .logo-text h1 {
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
+    
+    .logo-text span {
+        font-size: 0.6rem;
+    }
+    
+    .logo-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .logo-inner {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    
+    /* Optimize hero section */
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .hero-description {
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+    
+    /* Optimize CTA buttons */
+    .btn-primary, .btn-outline {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+        min-width: 200px;
+    }
+    
+    .hero-buttons {
+        gap: 0.75rem;
+    }
+    
+    /* Optimize upcoming event */
+    .upcoming-event-details h3 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    
+    .upcoming-event-details .btn-primary {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Horizontal scroll for popular events */
+    .popular-events-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 0.5rem;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .popular-events-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .popular-events-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .event-card {
+        min-width: 280px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+    
+    /* Horizontal scroll for founders */
+    .founders-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 0.5rem;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .founders-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .founders-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .founder-card {
+        min-width: 280px;
+        height: 350px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+    
+    /* Adjust section spacing */
+    .section-spacer {
+        height: 2rem;
+    }
+    
+    .events-section, .founders-section, .comments-section {
+        padding: 2.5rem 0;
+    }
+    
+    /* Optimize comment form for mobile */
+    .comment-form-container {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .comment-form-title {
+        font-size: 1.25rem;
+    }
+    
+    .comment-form-actions {
+        flex-direction: column;
+    }
+    
+    .comment-rating-input {
+        justify-content: center;
+    }
+    
+    .submit-comment-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 0.8rem;
+    }
+    
+    .event-card {
+        min-width: 260px;
+    }
+    
+    .founder-card {
+        min-width: 260px;
+        height: 320px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.125rem;
+    }
+}
+/* Fix horizontal scroll for mobile */
+@media (max-width: 768px) {
+    .popular-events-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .popular-events-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .popular-events-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .popular-events-grid > * {
+        flex: 0 0 auto;
+        min-width: 280px;
+        scroll-snap-align: start;
+    }
+    
+    /* Prevent vertical scroll conflict */
+    .popular-events-grid::after {
+        content: '';
+        flex: 0 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-events-grid > * {
+        min-width: 260px;
+    }
+}
+/* Pagination Styles */
+.pagination-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 0.5rem;
+    color: var(--primary-green);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-btn i {
+    font-size: 0.75rem;
+}
+
+.pagination-pages {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.page-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--primary-green);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.page-btn:hover {
+    background-color: rgba(27, 94, 32, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.page-btn.active {
+    background-color: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.page-dots {
+    color: var(--gray);
+    padding: 0 0.25rem;
+}
+
+/* Responsive pagination */
+@media (max-width: 640px) {
+    .pagination {
+        gap: 0.5rem;
+    }
+    
+    .pagination-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+    
+    .pagination-pages {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .page-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+}
+/* Remove horizontal scroll from popular events */
+@media (max-width: 768px) {
+    .popular-events-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        overflow-x: visible;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Add horizontal scroll to recent events */
+    .recent-events-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .recent-events-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .recent-events-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .recent-event-card {
+        min-width: 240px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+}
+/* Add to existing styles.css - Add this at the end of the file */
+
+/* Gallery pattern background */
+.gallery-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("images/gplay.png");
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}

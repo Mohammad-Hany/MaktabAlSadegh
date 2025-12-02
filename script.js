@@ -5,6 +5,10 @@ let currentEventFilter = 'all';
 let currentDateFilter = 'all';
 let currentSortOrder = 'newest';
 
+// Gallery Global Variables
+let galleryItems = [];
+let currentGalleryItemIndex = 0;
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile menu
@@ -28,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if we're on event detail page
     if (document.querySelector('.event-detail-cover')) {
         loadEventDetailFromURL();
+    }
+    
+    // Initialize gallery if on gallery page or home page
+    if (document.querySelector('.gallery-section')) {
+        initializeGallery();
     }
 });
 
@@ -754,6 +763,7 @@ window.onload = function() {
     // Initialize Aparat video if present
     initializeAparatVideo();
 };
+
 // Contact Form Error Handling (sample for error display)
 function showFormError(fieldId, message) {
     const field = document.getElementById(fieldId);
@@ -824,226 +834,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-})
-
-// Gallery Functions
-function initializeGallery() {
-    // Get all gallery items
-    galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-    
-    // Add click event to each gallery item
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => openGalleryModal(index));
-    });
-    
-    // Initialize filter functionality
-    const filterButtons = document.querySelectorAll('.gallery-filter-btn');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active filter
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Filter gallery items
-            const filter = button.getAttribute('data-filter');
-            filterGalleryItems(filter);
-        });
-    });
-    
-    // Initialize search functionality
-    const searchInput = document.getElementById('gallerySearch');
-    if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            const query = searchInput.value.toLowerCase();
-            searchGalleryItems(query);
-        });
-    }
-    
-    // Add keyboard navigation for modal
-    document.addEventListener('keydown', function(event) {
-        const modal = document.getElementById('galleryModal');
-        if (!modal || !modal.classList.contains('active')) return;
-        
-        if (event.key === 'Escape') {
-            closeGalleryModal();
-        } else if (event.key === 'ArrowRight') {
-            prevGalleryItem(); // RTL: Right arrow goes to previous
-        } else if (event.key === 'ArrowLeft') {
-            nextGalleryItem(); // RTL: Left arrow goes to next
-        }
-    });
-}
-
-function filterGalleryItems(filter) {
-    const searchQuery = document.getElementById('gallerySearch').value.toLowerCase();
-    let visibleItems = 0;
-    
-    galleryItems.forEach(item => {
-        const itemType = item.getAttribute('data-type');
-        const itemTitle = item.getAttribute('data-title').toLowerCase();
-        
-        const matchesFilter = filter === 'all' || itemType === filter;
-        const matchesSearch = searchQuery === '' || itemTitle.includes(searchQuery);
-        
-        if (matchesFilter && matchesSearch) {
-            item.style.display = 'block';
-            visibleItems++;
-            
-            // Add animation
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.9)';
-            
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'scale(1)';
-                item.style.transition = 'opacity 0.5s, transform 0.5s';
-            }, 10);
-        } else {
-            item.style.display = 'none';
-        }
-    });
-    
-    // Show/hide empty state
-    const emptyState = document.getElementById('galleryEmpty');
-    if (visibleItems === 0) {
-        emptyState.style.display = 'flex';
-    } else {
-        emptyState.style.display = 'none';
-    }
-}
-
-function searchGalleryItems(query) {
-    const activeFilter = document.querySelector('.gallery-filter-btn.active').getAttribute('data-filter');
-    filterGalleryItems(activeFilter);
-}
-
-function openGalleryModal(index) {
-    currentGalleryItemIndex = index;
-    const modal = document.getElementById('galleryModal');
-    const modalContent = document.getElementById('modalContent');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalTag = document.getElementById('modalTag');
-    
-    if (!galleryItems[index]) return;
-    
-    const item = galleryItems[index];
-    const itemType = item.getAttribute('data-type');
-    const itemTitle = item.getAttribute('data-title');
-    
-    // Clear previous content
-    modalContent.innerHTML = '';
-    
-    // Create content based on type
-    if (itemType === 'image') {
-        const img = item.querySelector('img');
-        const modalImg = document.createElement('img');
-        modalImg.src = img.src;
-        modalImg.alt = itemTitle;
-        modalContent.appendChild(modalImg);
-    } else if (itemType === 'video') {
-        const iframe = document.createElement('iframe');
-        // In a real app, you would extract the video ID from the data
-        iframe.src = `https://www.youtube.com/embed/ABC123`;
-        iframe.allowFullscreen = true;
-        iframe.title = itemTitle;
-        modalContent.appendChild(iframe);
-    }
-    
-    // Update title and tag
-    modalTitle.textContent = itemTitle;
-    modalTag.textContent = itemType === 'image' ? 'تصویر' : 'ویدیو';
-    
-    // Show modal
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeGalleryModal() {
-    const modal = document.getElementById('galleryModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-function nextGalleryItem() {
-    // Get filtered items
-    const activeFilter = document.querySelector('.gallery-filter-btn.active').getAttribute('data-filter');
-    const searchQuery = document.getElementById('gallerySearch').value.toLowerCase();
-    
-    const filteredItems = galleryItems.filter((item, index) => {
-        const itemType = item.getAttribute('data-type');
-        const itemTitle = item.getAttribute('data-title').toLowerCase();
-        
-        const matchesFilter = activeFilter === 'all' || itemType === activeFilter;
-        const matchesSearch = searchQuery === '' || itemTitle.includes(searchQuery);
-        
-        return matchesFilter && matchesSearch && item.style.display !== 'none';
-    });
-    
-    if (filteredItems.length === 0) return;
-    
-    // Find current item index in filtered list
-    const currentItem = galleryItems[currentGalleryItemIndex];
-    let currentFilteredIndex = filteredItems.indexOf(currentItem);
-    
-    // Move to next item
-    currentFilteredIndex = (currentFilteredIndex + 1) % filteredItems.length;
-    
-    // Find original index of next item
-    const nextItem = filteredItems[currentFilteredIndex];
-    const nextIndex = galleryItems.indexOf(nextItem);
-    
-    // Open modal with next item
-    openGalleryModal(nextIndex);
-}
-
-function prevGalleryItem() {
-    // Get filtered items
-    const activeFilter = document.querySelector('.gallery-filter-btn.active').getAttribute('data-filter');
-    const searchQuery = document.getElementById('gallerySearch').value.toLowerCase();
-    
-    const filteredItems = galleryItems.filter((item, index) => {
-        const itemType = item.getAttribute('data-type');
-        const itemTitle = item.getAttribute('data-title').toLowerCase();
-        
-        const matchesFilter = activeFilter === 'all' || itemType === activeFilter;
-        const matchesSearch = searchQuery === '' || itemTitle.includes(searchQuery);
-        
-        return matchesFilter && matchesSearch && item.style.display !== 'none';
-    });
-    
-    if (filteredItems.length === 0) return;
-    
-    // Find current item index in filtered list
-    const currentItem = galleryItems[currentGalleryItemIndex];
-    let currentFilteredIndex = filteredItems.indexOf(currentItem);
-    
-    // Move to previous item
-    currentFilteredIndex = (currentFilteredIndex - 1 + filteredItems.length) % filteredItems.length;
-    
-    // Find original index of previous item
-    const prevItem = filteredItems[currentFilteredIndex];
-    const prevIndex = galleryItems.indexOf(prevItem);
-    
-    // Open modal with previous item
-    openGalleryModal(prevIndex);
-}
-// Add global variables at the top with other globals
-let galleryItems = [];
-let currentGalleryItemIndex = 0;
-
-// In the DOMContentLoaded event listener, add gallery initialization
-document.addEventListener('DOMContentLoaded', function() {
-    // ... existing code ...
-    
-    // Initialize gallery if on home page
-    if (document.querySelector('.gallery-section')) {
-        initializeGallery();
-    }
-    
-    // ... existing code ...
 });
 
-// Fix the initializeGallery function - add missing variable definitions and call it properly
+// Gallery Functions - Fixed
 function initializeGallery() {
     // Get all gallery items
     galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
@@ -1089,9 +882,18 @@ function initializeGallery() {
             nextGalleryItem(); // RTL: Left arrow goes to next
         }
     });
+    
+    // Add modal overlay for clicking outside to close
+    const modal = document.getElementById('galleryModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGalleryModal();
+            }
+        });
+    }
 }
 
-// Fix filterGalleryItems to properly show/hide items
 function filterGalleryItems(filter) {
     const searchInput = document.getElementById('gallerySearch');
     const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
@@ -1133,14 +935,12 @@ function filterGalleryItems(filter) {
     }
 }
 
-// Fix searchGalleryItems function
 function searchGalleryItems(query) {
     const activeFilterBtn = document.querySelector('.gallery-filter-btn.active');
     const activeFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
     filterGalleryItems(activeFilter);
 }
 
-// Fix openGalleryModal function - improve video handling
 function openGalleryModal(index) {
     currentGalleryItemIndex = index;
     const modal = document.getElementById('galleryModal');
@@ -1153,59 +953,29 @@ function openGalleryModal(index) {
     const item = galleryItems[index];
     const itemType = item.getAttribute('data-type');
     const itemTitle = item.getAttribute('data-title');
+    const img = item.querySelector('img');
     
     // Clear previous content
     if (modalContent) {
         modalContent.innerHTML = '';
         
-        // Create content based on type
-        if (itemType === 'image') {
-            const img = item.querySelector('img');
+        // Create image content
+        if (img) {
             const modalImg = document.createElement('img');
             modalImg.src = img.src;
             modalImg.alt = itemTitle;
+            modalImg.style.maxWidth = '100%';
+            modalImg.style.maxHeight = '100%';
+            modalImg.style.objectFit = 'contain';
+            modalImg.style.borderRadius = '0.5rem';
+            modalImg.style.boxShadow = '0 25px 50px -12px rgba(0,0,0,.25)';
             modalContent.appendChild(modalImg);
-        } else if (itemType === 'video') {
-            // Create a placeholder for video with play button
-            const videoContainer = document.createElement('div');
-            videoContainer.style.width = '100%';
-            videoContainer.style.height = '100%';
-            videoContainer.style.display = 'flex';
-            videoContainer.style.alignItems = 'center';
-            videoContainer.style.justifyContent = 'center';
-            videoContainer.style.backgroundColor = '#000';
-            videoContainer.style.borderRadius = '0.75rem';
-            
-            const playButton = document.createElement('div');
-            playButton.style.width = '80px';
-            playButton.style.height = '80px';
-            playButton.style.borderRadius = '50%';
-            playButton.style.backgroundColor = 'var(--gold)';
-            playButton.style.display = 'flex';
-            playButton.style.alignItems = 'center';
-            playButton.style.justifyContent = 'center';
-            playButton.style.cursor = 'pointer';
-            
-            const playIcon = document.createElement('i');
-            playIcon.className = 'fas fa-play';
-            playIcon.style.fontSize = '2rem';
-            playIcon.style.color = 'var(--primary-green)';
-            
-            playButton.appendChild(playIcon);
-            videoContainer.appendChild(playButton);
-            
-            // Add click handler to play video
-            playButton.addEventListener('click', function() {
-                showToast('پخش ویدیو در نسخه کامل سایت فعال خواهد شد');
-            });
-            
-            modalContent.appendChild(videoContainer);
         }
     }
     
     // Update title and tag
     if (modalTitle) modalTitle.textContent = itemTitle;
-    if (modalTag) modalTag.textContent = itemType === 'image' ? 'تصویر' : 'ویدیو';
+    if (modalTag) modalTag.textContent = 'تصویر';
     
     // Show modal
     if (modal) {
@@ -1214,7 +984,6 @@ function openGalleryModal(index) {
     }
 }
 
-// Fix closeGalleryModal function
 function closeGalleryModal() {
     const modal = document.getElementById('galleryModal');
     if (modal) {
@@ -1223,7 +992,6 @@ function closeGalleryModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Fix nextGalleryItem function - handle edge cases
 function nextGalleryItem() {
     // Get filtered items
     const activeFilterBtn = document.querySelector('.gallery-filter-btn.active');
@@ -1263,7 +1031,6 @@ function nextGalleryItem() {
     openGalleryModal(nextIndex);
 }
 
-// Fix prevGalleryItem function - handle edge cases
 function prevGalleryItem() {
     // Get filtered items
     const activeFilterBtn = document.querySelector('.gallery-filter-btn.active');
@@ -1301,4 +1068,125 @@ function prevGalleryItem() {
     
     // Open modal with previous item
     openGalleryModal(prevIndex);
-};
+}
+
+// Comment form functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Comment form handling
+    const commentForm = document.getElementById('homeCommentForm');
+    if (commentForm) {
+        // Star rating
+        const stars = commentForm.querySelectorAll('.stars i');
+        let currentRating = 0;
+        
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                currentRating = rating;
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.classList.remove('far');
+                        s.classList.add('fas', 'active');
+                    } else {
+                        s.classList.remove('fas', 'active');
+                        s.classList.add('far');
+                    }
+                });
+            });
+            
+            // Hover effect
+            star.addEventListener('mouseenter', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.classList.remove('far');
+                        s.classList.add('fas');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseleave', function() {
+                stars.forEach((s, index) => {
+                    if (index >= currentRating) {
+                        s.classList.remove('fas');
+                        s.classList.add('far');
+                    }
+                });
+            });
+        });
+        
+        // Form submission
+        commentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = this.querySelector('input[type="text"]').value.trim();
+            const comment = this.querySelector('textarea').value.trim();
+            
+            if (name && comment) {
+                // In a real app, you would submit to server
+                showToast('نظر شما با موفقیت ثبت شد و پس از تایید نمایش داده خواهد شد');
+                this.reset();
+                
+                // Reset stars
+                stars.forEach(star => {
+                    star.classList.remove('fas', 'active');
+                    star.classList.add('far');
+                });
+                currentRating = 0;
+            } else {
+                showToast('لطفا نام و نظر خود را وارد کنید');
+            }
+        });
+    }
+    
+    // Horizontal scroll improvements for mobile
+    function initHorizontalScroll() {
+        if (window.innerWidth <= 768) {
+            // Enable touch scrolling for popular events
+            const popularEventsGrid = document.querySelector('.popular-events-grid');
+            if (popularEventsGrid) {
+                popularEventsGrid.style.overflowX = 'auto';
+                popularEventsGrid.style.scrollSnapType = 'x mandatory';
+            }
+            
+            // Enable touch scrolling for founders
+            const foundersGrid = document.querySelector('.founders-grid');
+            if (foundersGrid) {
+                foundersGrid.style.overflowX = 'auto';
+                foundersGrid.style.scrollSnapType = 'x mandatory';
+            }
+            
+            // Enable touch scrolling for comments
+            const commentsSlider = document.querySelector('.comments-slider');
+            if (commentsSlider) {
+                commentsSlider.style.overflowX = 'auto';
+                commentsSlider.style.scrollSnapType = 'x mandatory';
+            }
+        }
+    }
+    
+    initHorizontalScroll();
+    window.addEventListener('resize', initHorizontalScroll);
+    
+    // Add swipe detection for horizontal scroll on mobile
+    if ('ontouchstart' in window) {
+        let startX = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        document.addEventListener('touchmove', function(e) {
+            if (!e.target.closest('.popular-events-grid, .founders-grid, .comments-slider')) return;
+            
+            const currentX = e.touches[0].clientX;
+            const diffX = startX - currentX;
+            
+            // Only prevent vertical scrolling when horizontal swipe is detected
+            if (Math.abs(diffX) > 5) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    }
+});
