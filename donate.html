@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حمایت مالی - هیئت مذهبی فرهنگی مکتب الصادق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="notification-ping"></span>
+            <span class="notification-text">پخش زنده مراسم دعای کمیل</span>
+            <a href="#live" class="notification-link" onclick="openLiveStream()">تماشا کنید</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Logo Area (Hidden on mobile, shown in menu) -->
+            <a href="home.html" class="logo-area mobile-logo-visible">
+                <div class="logo-icon">
+                    <img src="images/logo.png"/>
+                </div>
+                <div class="logo-text">
+                    <h1>هیئت مکتب الصادق</h1>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <a href="home.html" class="nav-link">خانه</a>
+                <a href="events.html" class="nav-link">مراسم‌ها</a>
+                <a href="about-us.html" class="nav-link">درباره ما</a>
+                <a href="contact-us.html" class="nav-link">تماس با ما</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="nav-cta">
+                <a href="donate.html" class="donate-btn active">حمایت مالی</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <!-- Logo inside mobile menu -->
+                <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                    <div class="mobile-logo-icon">
+                        <img src="images/logo.png"/>
+                    </div>
+                    <div class="mobile-logo-text">
+                        <h2>هیئت مکتب الصادق</h2>
+                        <span>محفل رهروان شهدا</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu-content">
+                <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+                <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
+                <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
+                <a href="donate.html" class="mobile-donate-btn active" onclick="toggleMobileMenu()">حمایت مالی</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <section class="donate-hero">
+            <div class="donate-pattern"></div>
+            <div class="container">
+                <div class="donate-hero-content">
+                    <div class="donate-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <h1 class="donate-title">حمایت مالی از هیئت</h1>
+                    
+                    <p class="donate-description">
+                    <p class="qouran">
+                        «مَنْ ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ وَلَهُ أَجْرٌ كَرِيمٌ»<br><br>
+                    </p>
+                        کمک‌های شما چراغ محفل اهل بیت را روشن نگه می‌دارد و در گسترش فرهنگ عاشورایی سهیم خواهد بود. هر مبلغی، هرچند اندک، در پیشگاه خداوند مأجور است.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container">
+            <div class="donate-grid">
+                <!-- Left Side: Card Numbers -->
+                <div class="donate-cards">
+                    <div class="cards-container">
+                        <h3><i class="far fa-credit-card"></i> شماره کارت‌های هیئت</h3>
+                        
+                        <div class="card-list">
+                            <!-- Card 1 -->
+                            <div class="bank-card bank-melli">
+                                <div class="card-bg"></div>
+                                <div class="card-pattern"></div>
+                                
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <span class="bank-name">بانک سپه</span>
+                                        <i class="far fa-credit-card"></i>
+                                    </div>
+                                    
+                                    <div class="card-number">۶۰۳۷-۹۹۷۱-۲۳۴۵-۶۷۸۹</div>
+                                    
+                                    <div class="card-footer">
+                                        <span class="card-owner">هیئت مکتب الصادق - محمد عباسی</span>
+                                        
+                                        <button class="copy-card-btn" onclick="copyCardNumber('6037997123456789')">
+                                            <i class="far fa-copy"></i>
+                                            <span>کپی</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Card 2 -->
+                            <div class="bank-card bank-mellat">
+                                <div class="card-bg"></div>
+                                <div class="card-pattern"></div>
+                                
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <span class="bank-name">بانک ملت</span>
+                                        <i class="far fa-credit-card"></i>
+                                    </div>
+                                    
+                                    <div class="card-number">۶۱۰۴-۳۳۷۸-۵۶۷۸-۹۰۱۲</div>
+                                    
+                                    <div class="card-footer">
+                                        <span class="card-owner">هیئت مکتب الصادق</span>
+                                        
+                                        <button class="copy-card-btn" onclick="copyCardNumber('6104337856789012')">
+                                            <i class="far fa-copy"></i>
+                                            <span>کپی</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-notice">
+                            <p><strong>توجه:</strong> لطفا پس از واریز کارت به کارت، جهت ثبت در سیستم مالی و صدور رسید، اطلاعات پرداخت را در فرم مقابل (یا پایین) وارد نمایید.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Payment Form -->
+                <div class="donate-form-container">
+                    <div class="donate-form-card">
+                        <div class="form-header">
+                            <h2>فرم پرداخت آنلاین / ثبت واریزی</h2>
+                        </div>
+                        
+                        <div class="form-content">
+                            <form id="donateForm" onsubmit="submitDonateForm(event)">
+                                <!-- Amount -->
+                                <div class="form-field">
+                                    <label>مبلغ (تومان) <span class="required">*</span></label>
+                                    
+                                    <div class="amount-input-container">
+                                        <input type="text" placeholder="مثلا: ۱۰۰,۰۰۰" class="amount-input" id="donationAmount" required>
+                                        <span class="amount-unit">تومان</span>
+                                    </div>
+                                    
+                                    <div class="amount-suggestions">
+                                        <button type="button" class="amount-suggestion" data-amount="50000">۵۰,۰۰۰</button>
+                                        <button type="button" class="amount-suggestion" data-amount="100000">۱۰۰,۰۰۰</button>
+                                        <button type="button" class="amount-suggestion" data-amount="200000">۲۰۰,۰۰۰</button>
+                                        <button type="button" class="amount-suggestion" data-amount="500000">۵۰۰,۰۰۰</button>
+                                        <button type="button" class="amount-suggestion" data-amount="1000000">۱،۰۰۰,۰۰۰</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Title & Phone -->
+                                <div class="form-grid">
+                                    <div class="form-field">
+                                        <label>نیت نذر / عنوان <span class="required">*</span></label>
+                                        
+                                        <select class="form-select" id="donationPurpose" required>
+                                            <option value="">انتخاب کنید</option>
+                                            <option value="general">کمک عمومی به هیئت</option>
+                                            <option value="nazr">نذورات (محرم/فاطمیه)</option>
+                                            <option value="construction">ساخت و ساز و تجهیزات</option>
+                                            <option value="cultural">فعالیت‌های فرهنگی</option>
+                                            <option value="charity">خیریه و کمک به نیازمندان</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-field">
+                                        <label>شماره همراه <span class="required">*</span></label>
+                                        
+                                        <div class="phone-input-container">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <input type="tel" placeholder="09xxxxxxxxx" class="phone-input" id="donorPhone" required dir="ltr">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Name -->
+                                <div class="form-field">
+                                    <label>نام و نام خانوادگی (اختیاری)</label>
+                                    
+                                    <div class="name-input-container">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" placeholder="نام خیر محترم" class="name-input" id="donorName">
+                                    </div>
+                                </div>
+                                
+                                <!-- Explanation -->
+                                <div class="form-field">
+                                    <label>توضیحات تکمیلی (اختیاری)</label>
+                                    
+                                    <div class="textarea-container">
+                                        <i class="far fa-file-alt"></i>
+                                        <textarea placeholder="اگر توضیح خاصی دارید اینجا بنویسید..." class="donation-textarea" id="donationNotes"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="submit-donation-btn">پرداخت و ثبت نهایی</button>
+                                
+                                <p class="payment-notice">پرداخت از طریق درگاه امن بانکی انجام خواهد شد.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-inner"></div>
+                        </div>
+                        <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                    </div>
+                    
+                    <p class="footer-description">
+                        هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی. ما می‌کوشیم تا با برگزاری مراسمات معنوی، چراغ راه هدایت را روشن نگه داریم.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    
+                    <ul class="footer-menu">
+                        <li><a href="home.html"><span class="menu-bullet"></span> صفحه اصلی</a></li>
+                        <li><a href="events.html"><span class="menu-bullet"></span> مراسم‌ها</a></li>
+                        <li><a href="#gallery"><span class="menu-bullet"></span> گالری تصاویر</a></li>
+                        <li><a href="about-us.html"><span class="menu-bullet"></span> درباره هیئت</a></li>
+                        <li><a href="contact-us.html"><span class="menu-bullet"></span> ارتباط با ما</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3 class="footer-title">ارتباط با ما</h3>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span>
+                        </li>
+                        
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span dir="ltr">021 - 8888 9999</span>
+                        </li>
+                        
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>info@ansar-heyat.ir</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">عضویت در خبرنامه</h3>
+                    
+                    <p class="newsletter-description">برای اطلاع از زمان برگزاری مراسمات، شماره همراه خود را وارد کنید.</p>
+                    
+                    <div class="newsletter-form">
+                        <input type="text" placeholder="09xxxxxxxxx" class="newsletter-input" dir="ltr">
+                        <button class="newsletter-btn">عضویت</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+                
+                <a href="#" class="creator-link">
+                    <span>Created with love by</span>
+                    <span class="creator-name">Mohammad Hany Feyz</span>
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

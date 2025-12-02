@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات مراسم - هیئت مذهبی فرهنگی مکتب الصادق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="notification-ping"></span>
+            <span class="notification-text">پخش زنده مراسم دعای کمیل</span>
+            <a href="#live" class="notification-link" onclick="openLiveStream()">تماشا کنید</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Logo Area (Hidden on mobile, shown in menu) -->
+            <a href="home.html" class="logo-area mobile-logo-visible">
+                <div class="logo-icon">
+                    <img src="images/logo.png" />
+                </div>
+                <div class="logo-text">
+                    <h1>هیئت مکتب الصادق</h1>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <a href="home.html" class="nav-link">خانه</a>
+                <a href="events.html" class="nav-link">مراسم‌ها</a>
+                <a href="about-us.html" class="nav-link">درباره ما</a>
+                <a href="contact-us.html" class="nav-link">تماس با ما</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="nav-cta">
+                <a href="donate.html" class="donate-btn">حمایت مالی</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <!-- Logo inside mobile menu -->
+                <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                    <div class="mobile-logo-icon">
+                        <img src="images/logo.png" />
+                    </div>
+                    <div class="mobile-logo-text">
+                        <h2>هیئت مکتب الصادق</h2>
+                        <span>محفل رهروان شهدا</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu-content">
+                <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+                <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
+                <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
+                <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Event Detail Cover -->
+        <div class="event-detail-cover">
+            <img src="images/1.JPG" alt="مراسم" id="detailCoverImage">
+            <div class="cover-gradient"></div>
+
+            <div class="cover-content">
+                <div class="event-tags" id="eventTags">
+                    <span class="event-tag event-tag-ceremony">مراسم</span>
+                    <span class="event-tag event-tag-upcoming">پیش‌رو</span>
+                </div>
+
+                <h1 class="event-detail-title" id="detailTitle">سخنرانی حجت الاسلام پناهیان - محرم ۱۴۰۳</h1>
+                <p class="event-detail-subtitle" id="detailSubtitle">سخنرانی ویژه محرم با موضوع «عاشورا و فلسفه قیام
+                    حسینی»</p>
+
+                <div class="event-detail-meta">
+                    <div class="meta-item">
+                        <i class="far fa-calendar"></i>
+                        <span id="detailDate">۱۵ شهریور ۱۴۰۳</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span id="detailTime">۲۰:۳۰</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="detailLocation">مسجد دانشگاه تهران</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span id="detailSpeaker">سخنران: حجت الاسلام پناهیان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="event-detail-grid">
+                <!-- Main Content -->
+                <div class="event-detail-main">
+                    <div class="detail-tabs-container">
+                        <div class="detail-tabs-header">
+                            <!-- Horizontal Tabs Row -->
+                            <div class="detail-tabs-row">
+                                <button class="detail-tab-row active" data-tab="report"
+                                    onclick="switchTab('report')">گزارش متنی</button>
+                                <button class="detail-tab-row" data-tab="gallery"
+                                    onclick="switchTab('gallery')">تصاویر</button>
+                                <button class="detail-tab-row" data-tab="videos"
+                                    onclick="switchTab('videos')">ویدیوها</button>
+                                <button class="detail-tab-row" data-tab="comments"
+                                    onclick="switchTab('comments')">نظرات</button>
+                            </div>
+                        </div>
+
+                        <div class="detail-tabs-content">
+                            <!-- Report Tab -->
+                            <div class="detail-tab-content active" id="reportTab">
+                                <div class="report-content">
+                                    <p class="report-description" id="reportDescription">
+                                        سخنرانی ویژه محرم با موضوع «عاشورا و فلسفه قیام حسینی» توسط حجت الاسلام پناهیان.
+                                        این مراسم با حضور مداحان اهل بیت و ذاکرین هیئت همراه خواهد بود.
+                                    </p>
+
+                                    <div class="report-full-content" id="reportFullContent">
+                                        <p>مراسم سخنرانی حجت الاسلام پناهیان با موضوع «عاشورا و فلسفه قیام حسینی» در
+                                            تاریخ ۱۵ شهریور ۱۴۰۳ در مسجد دانشگاه تهران برگزار شد. این مراسم با استقبال
+                                            گسترده جوانان و اهالی محله همراه بود.</p>
+
+                                        <p>حجت الاسلام پناهیان در این سخنرانی به تبیین ابعاد مختلف قیام امام حسین (ع) و
+                                            درس‌های عاشورا برای زندگی امروز پرداختند. ایشان تأکید کردند که عاشورا تنها
+                                            یک حادثه تاریخی نیست، بلکه یک مکتب و مدرسه تربیتی است که باید در تمام ابعاد
+                                            زندگی فردی و اجتماعی ما تأثیرگذار باشد.</p>
+
+                                        <p>در ادامه مراسم، ذاکر اهل بیت حاج علی اکبری به مداحی و روضه‌خوانی پرداخت و
+                                            فضای معنوی خاصی در محل برقرار شد. مراسم با پذیرایی از حضار و اهدای جوایز به
+                                            قید قرعه به پایان رسید.</p>
+                                    </div>
+
+                                    <div class="report-tags">
+                                        <span class="tag-label">برچسب‌ها:</span>
+                                        <span class="report-tag">مراسم</span>
+                                        <span class="report-tag">مذهبی</span>
+                                        <span class="report-tag">هیئت مکتب الصادق</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gallery Tab -->
+                            <div class="detail-tab-content" id="galleryTab">
+                                <div class="detail-gallery" id="detailGallery">
+                                    <div class="detail-gallery-item">
+                                        <img src="images/1.JPG" alt="گالری">
+                                    </div>
+
+                                    <div class="detail-gallery-item">
+                                        <img src="images/1.JPG" alt="گالری">
+                                    </div>
+
+                                    <div class="detail-gallery-item">
+                                        <img src="images/1.JPG" alt="گالری">
+                                    </div>
+
+                                    <div class="detail-gallery-item">
+                                        <img src="images/1.JPG" alt="گالری">
+                                    </div>
+                                </div>
+
+                                <div class="gallery-empty-message">
+                                    تصویری موجود نیست.
+                                </div>
+                            </div>
+
+                            <!-- Videos Tab -->
+                            <div class="detail-tab-content" id="videosTab">
+                                <div class="detail-videos" id="detailVideos">
+                                    <!-- Aparat Video Embed -->
+                                    <div class="detail-video-item">
+                                        <div id="36344164714">
+                                            <script type="text/javascript"
+                                                src="https://www.aparat.com/embed/yirych3?data[rnddiv]=36344164714&data[responsive]=yes&titleShow=true"></script>
+                                        </div>
+                                    </div>
+                                    <div class="detail-video-item">
+                                        <div id="36344164714">
+                                            <script type="text/javascript"
+                                                src="https://www.aparat.com/embed/yirych3?data[rnddiv]=36344164714&data[responsive]=yes&titleShow=true"></script>
+                                        </div>
+                                    </div>
+
+                                    <!-- Additional video can be added here -->
+                                </div>
+
+                                <div class="videos-empty-message">
+                                    ویدیویی موجود نیست.
+                                </div>
+                            </div>
+
+                            <!-- Comments Tab -->
+                            <div class="detail-tab-content" id="commentsTab">
+                                <div class="form-error-message" id="formError">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <span id="errorText">لطفا خطاهای فرم را بررسی کنید</span>
+                                </div>
+                                <div class="comment-form">
+                                    <h3>ارسال نظر</h3>
+
+                                    <div class="comment-form-grid">
+                                        <input type="text" placeholder="نام و نام خانوادگی" class="comment-input">
+                                        <input type="email" placeholder="ایمیل (اختیاری)" class="comment-input">
+                                    </div>
+
+                                    <textarea placeholder="دیدگاه خود را بنویسید..."
+                                        class="comment-textarea"></textarea>
+
+                                    <button class="submit-comment-btn">ثبت نظر</button>
+                                </div>
+
+                                <div class="comments-list-container">
+                                    <div class="comments-list" id="commentsList">
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <span>ع.ر</span>
+                                            </div>
+
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>علی رضایی</h4>
+                                                    <span class="comment-date">۲ روز پیش</span>
+                                                </div>
+
+                                                <p class="comment-text">بسیار عالی و پرفیض بود. خدا خیرتان دهد.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <span>م.ک</span>
+                                            </div>
+
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>محمد کریمی</h4>
+                                                    <span class="comment-date">۳ روز پیش</span>
+                                                </div>
+
+                                                <p class="comment-text">لطفا فایل صوتی سخنرانی را هم جداگانه قرار دهید.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <span>س.ح</span>
+                                            </div>
+
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>سید حسین موسوی</h4>
+                                                    <span class="comment-date">۴ روز پیش</span>
+                                                </div>
+
+                                                <p class="comment-text">سخنرانی بسیار تاثیرگذاری بود. امیدوارم باز هم از
+                                                    حاج آقا پناهیان دعوت کنید.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <span>ف.ا</span>
+                                            </div>
+
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>فاطمه احمدی</h4>
+                                                    <span class="comment-date">۵ روز پیش</span>
+                                                </div>
+
+                                                <p class="comment-text">مراسم واقعا بی‌نظیر بود. از زحمات همه خادمین
+                                                    هیئت ممنونم.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <span>ح.ر</span>
+                                            </div>
+
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>حسین رحیمی</h4>
+                                                    <span class="comment-date">۶ روز پیش</span>
+                                                </div>
+
+                                                <p class="comment-text">مداحی‌های حاج آقا اکبری واقعا دلها را می‌لرزاند.
+                                                    خداییش عالی بود.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <span>م.م</span>
+                                            </div>
+
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>محمد محمدی</h4>
+                                                    <span class="comment-date">۱ هفته پیش</span>
+                                                </div>
+
+                                                <p class="comment-text">فضای معنوی خاصی در مراسم حاکم بود. واقعا جای
+                                                    تشکر دارد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="event-detail-sidebar">
+                    <!-- Share Card -->
+                    <div class="sidebar-card share-card">
+                        <h3><i class="fas fa-share-alt"></i> اشتراک‌گذاری</h3>
+
+                        <!-- In the share box section, add these social media icons -->
+                        <!-- For the share box section, replace with proper anchor tags -->
+                        <div class="share-buttons">
+                            <a href="https://www.instagram.com/share?url=<?php echo urlencode($current_url); ?>"
+                                target="_blank" class="share-icon-btn">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://t.me/share/url?url=<?php echo urlencode($current_url); ?>&text=<?php echo urlencode($event_title); ?>"
+                                target="_blank" class="share-icon-btn">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://wa.me/?text=<?php echo urlencode($event_title . ' ' . $current_url); ?>"
+                                target="_blank" class="share-icon-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($current_url); ?>&text=<?php echo urlencode($event_title); ?>"
+                                target="_blank" class="share-icon-btn">
+                                <img class="icon-eitaa-event" src="images/icon-eitaa.svg">
+                            </a>
+                            <a href="mailto:?subject=<?php echo urlencode($event_title); ?>&body=<?php echo urlencode($current_url); ?>"
+                                class="share-icon-btn">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                            <button class="share-link-btn" onclick="copyEventLink()">
+                                <i class="fas fa-link"></i> کپی لینک
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Info Card -->
+                    <div class="sidebar-card info-card">
+                        <div class="info-card-pattern"></div>
+                        <h3>اطلاعات تکمیلی</h3>
+
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-label">ظرفیت سالن:</span>
+                                <span class="info-value">۵۰۰ نفر</span>
+                            </li>
+
+                            <li>
+                                <span class="info-label">پذیرایی:</span>
+                                <span class="info-value">دارد (شام)</span>
+                            </li>
+
+                            <li>
+                                <span class="info-label">پارکینگ:</span>
+                                <span class="info-value">عمومی (خیابان ولیعصر)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Related Events -->
+                    <div class="sidebar-card related-events-card">
+                        <h3>مراسمات مشابه</h3>
+
+                        <div class="related-events-list">
+                            <!-- Related Event 1 -->
+                            <div class="related-event-item">
+                                <div class="related-event-image">
+                                    <img src="images/1.JPG" alt="مراسم">
+                                </div>
+
+                                <div class="related-event-info">
+                                    <h4>سخنرانی دکتر پناهی در مورد سبک زندگی اسلامی</h4>
+                                    <span class="related-event-date">۲۸ مرداد ۱۴۰۳</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Event 2 -->
+                            <div class="related-event-item">
+                                <div class="related-event-image">
+                                    <img src="images/1.JPG" alt="مراسم">
+                                </div>
+
+                                <div class="related-event-info">
+                                    <h4>عزاداری شهادت امام جواد (ع)</h4>
+                                    <span class="related-event-date">۱۵ مرداد ۱۴۰۳</span>
+                                </div>
+                            </div>
+
+                            <!-- Related Event 3 -->
+                            <div class="related-event-item">
+                                <div class="related-event-image">
+                                    <img src="images/1.JPG" alt="مراسم">
+                                </div>
+
+                                <div class="related-event-info">
+                                    <h4>جشن میلاد امام رضا (ع)</h4>
+                                    <span class="related-event-date">۲۵ تیر ۱۴۰۳</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-inner"></div>
+                        </div>
+                        <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                    </div>
+
+                    <p class="footer-description">
+                        هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی. ما
+                        می‌کوشیم تا با برگزاری مراسمات معنوی، چراغ راه هدایت را روشن نگه داریم.
+                    </p>
+
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+
+                    <ul class="footer-menu">
+                        <li><a href="home.html"><span class="menu-bullet"></span> صفحه اصلی</a></li>
+                        <li><a href="events.html"><span class="menu-bullet"></span> مراسم‌ها</a></li>
+                        <li><a href="#gallery"><span class="menu-bullet"></span> گالری تصاویر</a></li>
+                        <li><a href="about-us.html"><span class="menu-bullet"></span> درباره هیئت</a></li>
+                        <li><a href="contact-us.html"><span class="menu-bullet"></span> ارتباط با ما</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3 class="footer-title">ارتباط با ما</h3>
+
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span>
+                        </li>
+
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span dir="ltr">021 - 8888 9999</span>
+                        </li>
+
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>info@ansar-heyat.ir</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">عضویت در خبرنامه</h3>
+
+                    <p class="newsletter-description">برای اطلاع از زمان برگزاری مراسمات، شماره همراه خود را وارد کنید.
+                    </p>
+
+                    <div class="newsletter-form">
+                        <input type="text" placeholder="09xxxxxxxxx" class="newsletter-input" dir="ltr">
+                        <button class="newsletter-btn">عضویت</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+
+                <a href="#" class="creator-link">
+                    <span>Created with love by</span>
+                    <span class="creator-name">Mohammad Hany Feyz</span>
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize event detail page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get event ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id') || 'event1';
+
+            // Load event data
+            if (typeof loadEventDetail === 'function') {
+                loadEventDetail(eventId);
+            }
+
+            // Initialize comments scrolling
+            initializeCommentsScrolling();
+        });
+    </script>
+</body>
+
+</html>

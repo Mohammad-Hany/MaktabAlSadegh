@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.jpg" />
+    <title>تماس با ما - هیئت مذهبی فرهنگی مکتب الصادق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+</head>
+<body>
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="notification-ping"></span>
+            <span class="notification-text">پخش زنده مراسم دعای کمیل</span>
+            <a href="events.html" class="notification-link">تماشا کنید</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Logo Area (Hidden on mobile, shown in menu) -->
+            <a href="home.html" class="logo-area mobile-logo-visible">
+                <div class="logo-icon">
+                    <img src="images/logo.png"/>
+                </div>
+                <div class="logo-text">
+                    <h1>هیئت مکتب الصادق</h1>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <a href="home.html" class="nav-link">خانه</a>
+                <a href="events.html" class="nav-link">مراسم‌ها</a>
+                <a href="about-us.html" class="nav-link">درباره ما</a>
+                <a href="contact-us.html" class="nav-link active">تماس با ما</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="nav-cta">
+                <a href="donate.html" class="donate-btn">حمایت مالی</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                    <div class="mobile-logo-icon">
+                        <img src="images/logo.png"/>
+                    </div>
+                    <div class="mobile-logo-text">
+                        <h2>هیئت مکتب الصادق</h2>
+                        <span>محفل رهروان شهدا</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu-content">
+                <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+                <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
+                <a href="contact-us.html" class="mobile-nav-link active" onclick="toggleMobileMenu()">تماس با ما</a>
+                <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero-pattern"></div>
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">تماس با ما</h1>
+                    <p class="page-hero-description">
+                        اگر سوال، پیشنهاد یا تمایل به همکاری با هیئت دارید، می‌توانید از طریق فرم زیر یا شبکه‌های اجتماعی با ما در ارتباط باشید.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page Content -->
+        <section class="contact-page-section">
+            <div class="container">
+                <!-- Social Media Section -->
+                <div class="contact-social-section">
+                    <h3 class="footer-title">شبکه‌های اجتماعی</h3>
+                    <div class="social-media-grid">
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">اینستاگرام</span>
+                                <span class="social-media-username">@heyat_maktab_alsadegh</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">تلگرام</span>
+                                <span class="social-media-username">@heyat_maktab_alsadegh</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">واتساپ</span>
+                                <span class="social-media-username">0912 345 6789</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">یوتیوب</span>
+                                <span class="social-media-username">Heyat Maktab Alsadegh</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">آپارات</span>
+                                <span class="social-media-username">heyat_maktab_alsadegh</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">ایمیل</span>
+                                <span class="social-media-username">info@heyat-maktab-alsadegh.ir</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-item">
+                            <div class="social-media-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="social-media-info">
+                                <span class="social-media-label">تلفن</span>
+                                <span class="social-media-username">۰۲۱-۸۸۸۸۹۹۹</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-page-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-info-card">
+                            <h2 class="contact-page-title">اطلاعات تماس</h2>
+                            <p class="contact-page-description">
+                                برای ارتباط مستقیم با مسئولین هیئت، می‌توانید از طریق اطلاعات زیر با ما در تماس باشید.
+                            </p>
+                            
+                            <div class="contact-info-list">
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h3>آدرس</h3>
+                                        <p>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h3>تلفن</h3>
+                                        <p dir="ltr">021 - 8888 9999</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="far fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h3>ایمیل</h3>
+                                        <p>info@ansar-heyat.ir</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="far fa-clock"></i>
+                                    </div>
+                                    <div class="contact-info-content">
+                                        <h3>ساعات پاسخگویی</h3>
+                                        <p>شنبه تا چهارشنبه: ۱۶:۰۰ تا ۲۰:۰۰<br>پنجشنبه: ۱۰:۰۰ تا ۱۲:۰۰</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Map -->
+                        <div class="contact-map">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3>موقعیت مکانی هیئت</h3>
+                                <p>نقشه موقعیت مکانی هیئت در این بخش نمایش داده خواهد شد.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <div class="contact-page-form">
+                            <h2 class="contact-page-title">فرم تماس با ما</h2>
+                            <p class="contact-page-description">
+                                برای ارسال پیام، لطفاً فرم زیر را پر کنید. در اسرع وقت با شما تماس خواهیم گرفت.
+                            </p>
+                            
+                            <div class="form-error-message" id="formError" style="display: none;">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span id="errorText">لطفا خطاهای فرم را بررسی کنید</span>
+                            </div>
+                            
+                            <form id="contactPageForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contactName">نام و نام خانوادگی <span class="required">*</span></label>
+                                        <input type="text" id="contactName" name="name" class="form-input" placeholder="نام خود را وارد کنید">
+                                        <span class="field-error" id="nameError" style="display: none;"></span>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="contactPhone">شماره همراه <span class="required">*</span></label>
+                                        <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="09xxxxxxxxx" dir="ltr">
+                                        <span class="field-error" id="phoneError" style="display: none;"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactEmail">ایمیل (اختیاری)</label>
+                                    <input type="email" id="contactEmail" name="email" class="form-input" placeholder="example@domain.com" dir="ltr">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactSubject">موضوع</label>
+                                    <select id="contactSubject" name="subject" class="form-select">
+                                        <option value="">انتخاب موضوع</option>
+                                        <option value="suggestion">پیشنهاد</option>
+                                        <option value="question">سوال</option>
+                                        <option value="cooperation">درخواست همکاری</option>
+                                        <option value="donation">حمایت مالی</option>
+                                        <option value="other">سایر</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactMessage">پیام شما <span class="required">*</span></label>
+                                    <textarea id="contactMessage" name="message" class="form-textarea" placeholder="متن پیام خود را وارد کنید..." rows="5"></textarea>
+                                    <span class="field-error" id="messageError" style="display: none;"></span>
+                                </div>
+                                
+                                <button type="submit" class="contact-submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    ارسال پیام
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-inner"></div>
+                        </div>
+                        <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                    </div>
+                    
+                    <p class="footer-description">
+                        هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی. ما می‌کوشیم تا با برگزاری مراسمات معنوی، چراغ راه هدایت را روشن نگه داریم.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    
+                    <ul class="footer-menu">
+                        <li><a href="home.html"><span class="menu-bullet"></span> صفحه اصلی</a></li>
+                        <li><a href="events.html"><span class="menu-bullet"></span> مراسم‌ها</a></li>
+                        <li><a href="gallery.html"><span class="menu-bullet"></span> گالری تصاویر</a></li>
+                        <li><a href="about-us.html"><span class="menu-bullet"></span> درباره هیئت</a></li>
+                        <li><a href="contact-us.html"><span class="menu-bullet"></span> ارتباط با ما</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3 class="footer-title">ارتباط با ما</h3>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span>
+                        </li>
+                        
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span dir="ltr">021 - 8888 9999</span>
+                        </li>
+                        
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>info@ansar-heyat.ir</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">عضویت در خبرنامه</h3>
+                    
+                    <p class="newsletter-description">برای اطلاع از زمان برگزاری مراسمات، شماره همراه خود را وارد کنید.</p>
+                    
+                    <div class="newsletter-form">
+                        <input type="text" placeholder="09xxxxxxxxx" class="newsletter-input" dir="ltr">
+                        <button class="newsletter-btn">عضویت</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+                
+                <a href="#" class="creator-link">
+                    <span>Created with love by</span>
+                    <span class="creator-name">Mohammad Hany Feyz</span>
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

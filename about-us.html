@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما - هیئت مذهبی فرهنگی مکتب الصادق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+    <link rel="icon" type="image/png" href="PATH/TO/FAVICON.png" />
+</head>
+<body>
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="notification-ping"></span>
+            <span class="notification-text">پخش زنده مراسم دعای کمیل</span>
+            <a href="#live" class="notification-link" onclick="openLiveStream()">تماشا کنید</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <a href="home.html" class="logo-area mobile-logo-visible">
+                <div class="logo-icon">
+                    <img src="images/logo.png"/>
+                </div>
+                <div class="logo-text">
+                    <h1>هیئت مکتب الصادق</h1>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+
+            <div class="desktop-nav">
+                <a href="home.html" class="nav-link">خانه</a>
+                <a href="events.html" class="nav-link">مراسم‌ها</a>
+                <a href="about-us.html" class="nav-link active">درباره ما</a>
+                <a href="contact-us.html" class="nav-link">تماس با ما</a>
+            </div>
+
+            <div class="nav-cta">
+                <a href="donate.html" class="donate-btn">حمایت مالی</a>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                    <div class="mobile-logo-icon">
+                        <img src="images/logo.png"/>
+                    </div>
+                    <div class="mobile-logo-text">
+                        <h2>هیئت مکتب الصادق</h2>
+                        <span>محفل رهروان شهدا</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu-content">
+                <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+                <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="about-us.html" class="mobile-nav-link active" onclick="toggleMobileMenu()">درباره ما</a>
+                <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
+                <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
+            </div>
+        </div>
+        
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    </nav>
+
+    <!-- About Us Content -->
+    <main id="mainContent">
+        <section class="page-hero">
+            <div class="page-hero-pattern"></div>
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1 class="page-hero-title">درباره هیئت مکتب الصادق</h1>
+                    <p class="page-hero-description">چهار دهه خدمت به فرهنگ اهل بیت و نشر معارف اسلامی</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-page-section">
+            <div class="container">
+                <div class="about-page-content">
+                    <div class="about-page-text">
+                        <h2 class="about-page-title">هویت و مأموریت هیئت</h2>
+                        <p class="about-page-paragraph">
+                            هیئت مذهبی فرهنگی مکتب الصادق در سال ۱۳۶۰ با هدف نشر معارف اهل بیت (علیهم السلام) و زنده نگه داشتن یاد و نام شهدا تأسیس شد. این هیئت با بیش از چهار دهه فعالیت مستمر، همواره تلاش کرده است تا محفلی امن و معنوی برای دوستداران اهل بیت فراهم آورد.
+                        </p>
+                        
+                        <div class="about-page-mission">
+                            <h3><i class="fas fa-bullseye"></i> رسالت ما</h3>
+                            <p>ایجاد فضایی معنوی برای رشد ایمانی جوانان، ترویج فرهنگ عاشورایی، و خدمت به جامعه در چارچوب تعالیم اسلامی.</p>
+                        </div>
+
+                        <div class="about-page-values">
+                            <h3><i class="fas fa-star"></i> ارزش‌های ما</h3>
+                            <ul>
+                                <li>پایبندی به اصول و معارف دینی</li>
+                                <li>احترام به سلیقه‌های مذهبی متفاوت</li>
+                                <li>توجه ویژه به نسل جوان</li>
+                                <li>خدمت به جامعه محلی</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="about-page-image">
+                        <img src="images/9.jpg" alt="هیئت مکتب الصادق">
+                    </div>
+                </div>
+
+                <div class="about-page-stats">
+                    <div class="about-stat-card">
+                        <div class="about-stat-icon">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="about-stat-content">
+                            <span class="about-stat-number">۴۰+</span>
+                            <span class="about-stat-label">سال سابقه</span>
+                        </div>
+                    </div>
+
+                    <div class="about-stat-card">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="about-stat-content">
+                            <span class="about-stat-number">۵۰۰+</span>
+                            <span class="about-stat-label">مراسم برگزار شده</span>
+                        </div>
+                    </div>
+
+                    <div class="about-stat-card">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="about-stat-content">
+                            <span class="about-stat-number">۱۰۰۰+</span>
+                            <span class="about-stat-label">عضو فعال</span>
+                        </div>
+                    </div>
+
+                    <div class="about-stat-card">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <div class="about-stat-content">
+                            <span class="about-stat-number">۳</span>
+                            <span class="about-stat-label">سالن فعالیت</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-page-history">
+                    <h2 class="history-title">تاریخچه هیئت</h2>
+                    <div class="history-timeline">
+                        <div class="history-item">
+                            <div class="history-year">۱۳۶۰</div>
+                            <div class="history-content">
+                                <h3>تأسیس هیئت</h3>
+                                <p>هیئت مکتب الصادق توسط جمعی از جوانان انقلابی در محله دانشگاه تهران تأسیس شد.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="history-item">
+                            <div class="history-year">۱۳۷۰</div>
+                            <div class="history-content">
+                                <h3>گسترش فعالیت‌ها</h3>
+                                <p>با استقبال گسترده، فعالیت‌های هیئت به برگزاری مراسم هفتگی گسترش یافت.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="history-item">
+                            <div class="history-year">۱۳۸۵</div>
+                            <div class="history-content">
+                                <h3>افتتاح سالن اصلی</h3>
+                                <p>سالن اصلی هیئت با ظرفیت ۵۰۰ نفر در خیابان کارگر شمالی افتتاح شد.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="history-item">
+                            <div class="history-year">۱۴۰۰</div>
+                            <div class="history-content">
+                                <h3>فعالیت‌های مجازی</h3>
+                                <p>با شروع همه‌گیری، هیئت فعالیت‌های مجازی خود را گسترش داد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-inner"></div>
+                        </div>
+                        <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                    </div>
+                    
+                    <p class="footer-description">
+                        هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    <ul class="footer-menu">
+                        <li><a href="home.html"><span class="menu-bullet"></span> صفحه اصلی</a></li>
+                        <li><a href="events.html"><span class="menu-bullet"></span> مراسم‌ها</a></li>
+                        <li><a href="about-us.html"><span class="menu-bullet"></span> درباره هیئت</a></li>
+                        <li><a href="contact-us.html"><span class="menu-bullet"></span> ارتباط با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">ارتباط با ما</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span dir="ltr">021 - 8888 9999</span>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>info@ansar-heyat.ir</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+                <a href="#" class="creator-link">
+                    <span>Created with love by</span>
+                    <span class="creator-name">Mohammad Hany Feyz</span>
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

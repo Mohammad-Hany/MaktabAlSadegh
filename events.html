@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراسم‌ها - هیئت مذهبی فرهنگی مکتب الصادق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="notification-ping"></span>
+            <span class="notification-text">پخش زنده مراسم دعای کمیل</span>
+            <a href="#live" class="notification-link" onclick="openLiveStream()">تماشا کنید</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Logo Area (Hidden on mobile, shown in menu) -->
+            <a href="home.html" class="logo-area mobile-logo-visible">
+                <div class="logo-icon">
+                    <img src="images/logo.png"/>
+                </div>
+                <div class="logo-text">
+                    <h1>هیئت مکتب الصادق</h1>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <a href="home.html" class="nav-link">خانه</a>
+                <a href="events.html" class="nav-link active">مراسم‌ها</a>
+                <a href="about-us.html" class="nav-link">درباره ما</a>
+                <a href="contact-us.html" class="nav-link">تماس با ما</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="nav-cta">
+                <a href="donate.html" class="donate-btn">حمایت مالی</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <!-- Logo inside mobile menu -->
+                <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                    <div class="mobile-logo-icon">
+                        <img src="images/logo.png"/>
+                    </div>
+                    <div class="mobile-logo-text">
+                        <h2>هیئت مکتب الصادق</h2>
+                        <span>محفل رهروان شهدا</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu-content">
+                <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+                <a href="events.html" class="mobile-nav-link active" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
+                <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
+                <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Events Search Section -->
+        <section class="events-search-section">
+            <div class="search-pattern"></div>
+            <div class="container">
+                <h1 class="search-title">آرشیو مراسمات و برنامه‌ها</h1>
+                
+                <div class="search-container">
+                    <div class="search-form">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="eventsSearch" placeholder="جستجو در مراسمات، سخنرانان و..." class="search-input">
+                        </div>
+                        
+                        <div class="search-select">
+                            <select id="categoryFilter" class="category-select">
+                                <option value="all">همه دسته‌ها</option>
+                                <option value="ceremony">مراسم</option>
+                                <option value="lecture">سخنرانی</option>
+                                <option value="prayer">نماز</option>
+                                <option value="celebration">جشن</option>
+                                <option value="mourning">عزاداری</option>
+                            </select>
+                        </div>
+                        
+                        <button class="search-btn" onclick="filterEvents()">جستجو</button>
+                    </div>
+                    
+                    <div class="advanced-filters">
+                        <span class="filters-label">
+                            <i class="fas fa-filter"></i> فیلترهای بیشتر:
+                        </span>
+                        
+                        <div class="date-filters">
+                            <button class="date-filter-btn active" data-filter="all" onclick="setDateFilter('all')">همه زمان‌ها</button>
+                            <button class="date-filter-btn" data-filter="upcoming" onclick="setDateFilter('upcoming')">پیش‌رو</button>
+                            <button class="date-filter-btn" data-filter="past" onclick="setDateFilter('past')">برگزار شده</button>
+                        </div>
+                        
+                        <div class="sort-container">
+                            <span class="sort-label">مرتب‌سازی:</span>
+                            <select id="sortOrder" class="sort-select" onchange="sortEvents()">
+                                <option value="newest">جدیدترین</option>
+                                <option value="oldest">قدیمی‌ترین</option>
+                                <option value="popular">محبوب‌ترین</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="events-results-section">
+            <div class="container">
+                <div class="results-header">
+                    <span class="results-count" id="resultsCount">۱۲ مورد یافت شد</span>
+                </div>
+                
+                <div class="events-results-grid" id="eventsResults">
+                    <!-- Events will be loaded by JavaScript -->
+                </div>
+                
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>نتیجه‌ای یافت نشد</h3>
+                    <p>لطفا فیلترهای جستجو را تغییر دهید</p>
+                    <button class="clear-filters-btn" onclick="clearFilters()">پاک کردن فیلترها</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-inner"></div>
+                        </div>
+                        <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                    </div>
+                    
+                    <p class="footer-description">
+                        هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی. ما می‌کوشیم تا با برگزاری مراسمات معنوی، چراغ راه هدایت را روشن نگه داریم.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    
+                    <ul class="footer-menu">
+                        <li><a href="home.html"><span class="menu-bullet"></span> صفحه اصلی</a></li>
+                        <li><a href="events.html"><span class="menu-bullet"></span> مراسم‌ها</a></li>
+                        <li><a href="#gallery"><span class="menu-bullet"></span> گالری تصاویر</a></li>
+                        <li><a href="about-us.html"><span class="menu-bullet"></span> درباره هیئت</a></li>
+                        <li><a href="contact-us.html"><span class="menu-bullet"></span> ارتباط با ما</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3 class="footer-title">ارتباط با ما</h3>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span>
+                        </li>
+                        
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span dir="ltr">021 - 8888 9999</span>
+                        </li>
+                        
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>info@ansar-heyat.ir</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">عضویت در خبرنامه</h3>
+                    
+                    <p class="newsletter-description">برای اطلاع از زمان برگزاری مراسمات، شماره همراه خود را وارد کنید.</p>
+                    
+                    <div class="newsletter-form">
+                        <input type="text" placeholder="09xxxxxxxxx" class="newsletter-input" dir="ltr">
+                        <button class="newsletter-btn">عضویت</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+                
+                <a href="#" class="creator-link">
+                    <span>Created with love by</span>
+                    <span class="creator-name">Mohammad Hany Feyz</span>
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize events page on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load events data
+            if (typeof initializeEventsData === 'function') {
+                initializeEventsData();
+            }
+            
+            // Render initial results
+            if (typeof renderEventsResults === 'function') {
+                renderEventsResults();
+            }
+        });
+    </script>
+</body>
+</html>
