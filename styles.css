@@ -1,9 +1,10 @@
 @font-face {
     font-family: "Iransharp";
-    src: url("fonts/iransharp_bold_web.ttf");
+    /* src: url("fonts/iransharp_bold_web.ttf"); */
+    src: url("fonts/SGKara-Regular.ttf");
 }
 @font-face {
-    font-family: "Taha";
+    font-family: "Quran";
     src: url("fonts/QuranTaha.ttf");
 }
 * {
@@ -2490,7 +2491,7 @@ input, button, textarea, select, option, label, ::placeholder {
 }
 
 .qouran {
-    font-family: Taha;
+    font-family: Quran;
     font-size: 25px;
 }
 
@@ -4519,7 +4520,7 @@ input, button, textarea, select, option, label, ::placeholder {
 
 /* WhatsApp specific color */
 .social-media-item:nth-child(3) .social-media-icon {
-    background-color: #25D366;
+    background-color: var(--dark-red);
 }
 
 /* Telegram specific color */
@@ -4533,7 +4534,7 @@ input, button, textarea, select, option, label, ::placeholder {
 }
 
 /* Email specific color */
-.social-media-item:nth-child(6) .social-media-icon {
+.social-media-item:nth-child(4) .social-media-icon {
     background-color: var(--gold);
     color: var(--primary-green);
 }
@@ -4541,6 +4542,9 @@ input, button, textarea, select, option, label, ::placeholder {
 /* Phone specific color */
 .social-media-item:nth-child(7) .social-media-icon {
     background-color: var(--dark-red);
+}
+.social-media-item a{
+    text-decoration: none;
 }
 .mobile-menu-btn {
 display: none;
