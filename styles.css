@@ -4573,4 +4573,5 @@ margin-right: auto; / Push it to the left */
 
 .nav-container {
     justify-content: space-between; /* Add this to ensure proper spacing */
+    height: 75px;
 }}
