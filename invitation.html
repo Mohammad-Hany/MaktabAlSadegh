@@ -1,0 +1,292 @@
+<html lang="fa" dir="rtl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>دعوت‌نامه - هیئت مذهبی فرهنگی مکتب الصادق</title> <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> </head> <body> <div class="notification-bar"> <div class="notification-content"> <span class="notification-ping"></span> <span class="notification-text">پخش زنده مراسم دعای کمیل</span> <a href="#live" class="notification-link" onclick="openLiveStream()">تماشا کنید</a> </div> </div>
+text
+<nav class="navbar">
+    <div class="nav-container">
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="home.html" class="logo-area mobile-logo-visible">
+            <div class="logo-icon">
+                <img src="images/logo.png">
+            </div>
+            <div class="logo-text">
+                <h1>هیئت مکتب الصادق</h1>
+                <span>محفل رهروان شهدا</span>
+            </div>
+        </a>
+        <div class="desktop-nav">
+            <a href="home.html" class="nav-link">خانه</a>
+            <a href="events.html" class="nav-link">مراسم‌ها</a>
+            <a href="about-us.html" class="nav-link">درباره ما</a>
+            <a href="contact-us.html" class="nav-link">تماس با ما</a>
+        </div>
+        <div class="nav-cta">
+            <a href="donate.html" class="donate-btn">حمایت مالی</a>
+        </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                <div class="mobile-logo-icon">
+                    <img src="images/logo.png">
+                </div>
+                <div class="mobile-logo-text">
+                    <h2>هیئت مکتب الصادق</h2>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+            <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+            <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
+            <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
+            <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+</nav>
+
+<main id="mainContent">
+    <section class="invitation-hero">
+        <div class="invitation-pattern"></div>
+        <div class="container">
+            <div class="invitation-hero-content">
+                <div class="invitation-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h1 class="invitation-title">دعوت‌نامه ویژه</h1>
+                <p class="invitation-subtitle">محفل معنوی هیئت مکتب الصادق</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="invitation-section">
+        <div class="container">
+            <div class="invitation-card">
+                <div class="invitation-header">
+                    <div class="invitation-profile">
+                        <div class="profile-image">
+                            <img src="images/vali.jpg" alt="محمد رضا ولی">
+                            <div class="profile-badge">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-name">محمد رضا ولی</h2>
+                            <p class="profile-role">موسس هیئت مکتب الصادق</p>
+                            <div class="profile-meta">
+                                <span><i class="far fa-calendar-alt"></i> عضو از سال ۱۳۶۰</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invitation-stamp">
+                        <div class="stamp-icon">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <span class="stamp-text">دعوت رسمی</span>
+                    </div>
+                </div>
+
+                <div class="invitation-body">
+                    <div class="ceremony-info">
+                        <div class="ceremony-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <div class="ceremony-details">
+                            <h3 class="ceremony-title">سخنرانی حجت الاسلام پناهیان</h3>
+                            <p class="ceremony-theme">موضوع: «عاشورا و فلسفه قیام حسینی»</p>
+                            <div class="ceremony-meta">
+                                <span class="meta-item">
+                                    <i class="far fa-calendar"></i>
+                                    <strong>تاریخ:</strong> ۱۵ شهریور ۱۴۰۳
+                                </span>
+                                <span class="meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <strong>ساعت:</strong> ۲۰:۳۰
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <strong>مکان:</strong> مسجد دانشگاه تهران
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="invitation-message">
+                        <div class="message-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="message-content">
+                            <h4>دعوتنامه ویژه</h4>
+                            <p class="qouran">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                            <p>
+                                با سلام و تحیت،<br>
+                                به استحضار می‌رساند که مراسم سخنرانی ویژه محرم با حضور حجت الاسلام پناهیان در محل هیئت مکتب الصادق برگزار خواهد شد.
+                                حضور گرم و معنوی شما موجب افتخار و برکت این محفل خواهد بود.
+                            </p>
+                            <p class="message-signature">
+                                با احترام،<br>
+                                <strong>هیئت مذهبی فرهنگی مکتب الصادق</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="invitation-response">
+                        <h3 class="response-title"><i class="fas fa-clipboard-check"></i> تایید حضور</h3>
+                        <p class="response-description">لطفاً وضعیت حضور خود در مراسم را مشخص کنید:</p>
+                        
+                        <form id="invitationForm" onsubmit="submitInvitationResponse(event)">
+                            <div class="response-options">
+                                <label class="response-option">
+                                    <input type="radio" name="attendance" value="yes" class="response-input" required>
+                                    <div class="option-card option-yes">
+                                        <div class="option-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <h4>حضور خواهم داشت</h4>
+                                            <p>با کمال میل در مراسم شرکت می‌کنم</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="response-option">
+                                    <input type="radio" name="attendance" value="no" class="response-input">
+                                    <div class="option-card option-no">
+                                        <div class="option-icon">
+                                            <i class="fas fa-times-circle"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <h4>متأسفانه نمی‌توانم</h4>
+                                            <p>به دلیل مشکلات پیش آمده نمی‌توانم شرکت کنم</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="response-message">
+                                <label for="guestMessage">پیام شما (اختیاری)</label>
+                                <div class="textarea-container">
+                                    <i class="far fa-comment-dots"></i>
+                                    <textarea id="guestMessage" placeholder="پیام، پیشنهاد یا درخواست خاصی دارید؟" 
+                                              class="response-textarea" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="response-submit">
+                                <button type="submit" class="submit-response-btn">
+                                    <i class="fas fa-paper-plane"></i> ثبت پاسخ
+                                </button>
+                                <p class="response-notice">
+                                    <i class="fas fa-info-circle"></i>
+                                    پاسخ شما برای برنامه‌ریزی بهتر مراسم ثبت خواهد شد.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-pattern"></div>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <div class="footer-logo-inner">
+                            <img src="images/logo.svg">
+                        </div>
+                    </div>
+                    <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                </div>
+                <p class="footer-description">هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><img class="icon-eitaa" src="images/aparat.svg"></a>
+                    <a href="#" class="social-icon"><img class="icon-eitaa" src="images/icon-eitaa.svg"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-title">دسترسی سریع</h3>
+                <ul class="footer-menu">
+                    <li><a href="home.html"><span class="menu-bullet"></span>صفحه اصلی</a></li>
+                    <li><a href="events.html"><span class="menu-bullet"></span>مراسم‌ها</a></li>
+                    <li><a href="#gallery"><span class="menu-bullet"></span>گالری تصاویر</a></li>
+                    <li><a href="about-us.html"><span class="menu-bullet"></span>درباره هیئت</a></li>
+                    <li><a href="contact-us.html"><span class="menu-bullet"></span>ارتباط با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 class="footer-title">ارتباط با ما</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i><span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span></li>
+                    <li><i class="fas fa-phone"></i><span dir="ltr">021 - 8888 9999</span></li>
+                    <li><i class="far fa-envelope"></i><span>info@ansar-heyat.ir</span></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3 class="footer-title">عضویت در خبرنامه</h3>
+                <p class="newsletter-description">برای اطلاع از زمان برگزاری مراسمات، شماره همراه خود را وارد کنید.</p>
+                <div class="newsletter-form">
+                    <input type="text" placeholder="09xxxxxxxxx" class="newsletter-input" dir="ltr">
+                    <button class="newsletter-btn">عضویت</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+            <a href="#" class="creator-link">
+                <span>Created with love by</span>
+                <span class="creator-name">Mohammad Hany Feyz</span>
+                <i class="fas fa-heart"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+<script>
+    function submitInvitationResponse(e) {
+        e.preventDefault();
+        const attendance = document.querySelector('input[name="attendance"]:checked');
+        const message = document.getElementById('guestMessage').value;
+        
+        if (attendance) {
+            const responseText = attendance.value === 'yes' ? 'حضور' : 'عدم حضور';
+            showToast(`پاسخ شما (${responseText}) با موفقیت ثبت شد.`);
+            e.target.reset();
+            
+            // Reset option cards
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+        } else {
+            showToast('لطفاً وضعیت حضور خود را مشخص کنید');
+        }
+    }
+
+    // Add selection effect to option cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const options = document.querySelectorAll('.response-input');
+        options.forEach(option => {
+            option.addEventListener('change', function() {
+                document.querySelectorAll('.option-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+                const card = this.closest('.response-option').querySelector('.option-card');
+                card.classList.add('selected');
+            });
+        });
+    });
+</script>
+</body> </html>

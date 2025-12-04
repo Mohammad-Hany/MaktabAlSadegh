@@ -5620,3 +5620,784 @@ margin-right: auto; / Push it to the left */
     transform-origin: -22vw 11vh;
     box-shadow: -34vmin 0 4.761603265161721vmin currentColor;
 }
+/* Volunteer Signup Page Styles */
+.volunteer-section {
+padding: 5rem 0;
+background-color: var(--beige);
+}
+
+.volunteer-hero {
+text-align: center;
+margin-bottom: 3rem;
+}
+
+.volunteer-icon {
+width: 5rem;
+height: 5rem;
+background-color: var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 1.5rem;
+box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1);
+}
+
+.volunteer-icon i {
+width: 2.5rem;
+height: 2.5rem;
+color: var(--primary-green);
+font-size: 2rem;
+}
+
+.volunteer-title {
+font-size: 2rem;
+font-weight: 700;
+color: var(--primary-green);
+margin-bottom: 1rem;
+font-family: 'Iransharp', sans-serif;
+}
+
+.volunteer-description {
+font-size: 1.125rem;
+color: var(--gray);
+max-width: 48rem;
+margin: 0 auto;
+line-height: 1.75;
+}
+
+.volunteer-form-container {
+max-width: 48rem;
+margin: 0 auto 4rem;
+}
+
+.volunteer-form-card {
+background-color: #fff;
+border-radius: 1rem;
+box-shadow: 0 25px 50px -12px rgb(0 0 0 / .25);
+overflow: hidden;
+border-top: 4px solid var(--gold);
+}
+
+.volunteer-form-card .form-header {
+background-color: #fff;
+border-bottom: 1px solid #f3f4f6;
+padding: 1.5rem;
+}
+
+.volunteer-form-card .form-header h2 {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--primary-green);
+display: flex;
+align-items: center;
+gap: .5rem;
+margin-bottom: .5rem;
+}
+
+.volunteer-form-card .form-subtitle {
+color: var(--gray);
+font-size: .875rem;
+}
+
+.volunteer-form-card .form-content {
+padding: 2rem;
+}
+
+.checkbox-group {
+margin-top: .5rem;
+}
+
+.checkbox-row {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+}
+
+.checkbox-label {
+display: flex;
+align-items: center;
+gap: .5rem;
+cursor: pointer;
+padding: .5rem;
+border-radius: .5rem;
+transition: all 0.2s;
+}
+
+.checkbox-label:hover {
+background-color: rgb(27 94 32 / .05);
+}
+
+.checkbox-input {
+display: none;
+}
+
+.checkbox-custom {
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid var(--gray);
+border-radius: .25rem;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+background-color: var(--primary-green);
+border-color: var(--primary-green);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+content: '✓';
+color: white;
+font-size: .75rem;
+}
+
+.checkbox-text {
+font-size: .875rem;
+color: var(--dark-gray);
+}
+
+.skills-input-container {
+position: relative;
+}
+
+.skills-input-container i {
+position: absolute;
+right: .75rem;
+top: 50%;
+transform: translateY(-50%);
+width: 1.25rem;
+height: 1.25rem;
+color: #9ca3af;
+}
+
+.skills-input {
+width: 100%;
+padding: .75rem 2.5rem .75rem 1rem;
+border: 1px solid #e5e7eb;
+border-radius: .375rem;
+background-color: #fff;
+color: var(--dark-gray);
+font-size: .875rem;
+height: 3rem;
+transition: all 0.2s;
+}
+
+.skills-input:focus {
+outline: none;
+border-color: var(--primary-green);
+box-shadow: 0 0 0 3px rgb(27 94 32 / .1);
+}
+
+.volunteer-textarea {
+width: 100%;
+padding: .75rem 2.5rem .75rem 1rem;
+border: 1px solid #e5e7eb;
+border-radius: .375rem;
+background-color: #fff;
+color: var(--dark-gray);
+font-size: .875rem;
+min-height: 100px;
+resize: none;
+transition: all 0.2s;
+}
+
+.volunteer-textarea:focus {
+outline: none;
+border-color: var(--primary-green);
+box-shadow: 0 0 0 3px rgb(27 94 32 / .1);
+}
+
+.submit-volunteer-btn {
+width: 100%;
+height: 3.5rem;
+background-color: var(--primary-green);
+color: #fff;
+border: none;
+border-radius: .375rem;
+font-size: 1.125rem;
+font-weight: 700;
+box-shadow: 0 10px 15px -3px rgb(27 94 32 / .2);
+cursor: pointer;
+transition: all 0.3s;
+margin-top: 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: .5rem;
+}
+
+.submit-volunteer-btn:hover {
+background-color: var(--dark-green);
+transform: translateY(-2px);
+box-shadow: 0 20px 25px -5px rgb(27 94 32 / .3);
+}
+
+.form-notice {
+text-align: center;
+font-size: .875rem;
+color: var(--gray);
+margin-top: 1.5rem;
+padding-top: 1rem;
+border-top: 1px solid #f3f4f6;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: .5rem;
+}
+
+.form-notice i {
+color: var(--gold);
+}
+
+.volunteer-info-cards {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+gap: 2rem;
+margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+.volunteer-info-cards {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+.volunteer-info-cards .info-card {
+background-color: #fff;
+border-radius: 1rem;
+padding: 2rem;
+text-align: center;
+border: 1px solid rgb(212 175 55 / .2);
+transition: all 0.3s;
+}
+
+.volunteer-info-cards .info-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1);
+}
+
+.info-card-icon {
+width: 4rem;
+height: 4rem;
+background-color: var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 1.5rem;
+}
+
+.info-card-icon i {
+width: 2rem;
+height: 2rem;
+color: var(--primary-green);
+font-size: 1.5rem;
+}
+
+.volunteer-info-cards .info-card h3 {
+font-size: 1.25rem;
+font-weight: 700;
+color: var(--primary-green);
+margin-bottom: 1rem;
+}
+
+.volunteer-info-cards .info-card p {
+color: var(--gray);
+font-size: .875rem;
+line-height: 1.6;
+}
+
+/* Invitation Page Styles */
+.invitation-hero {
+background-color: var(--primary-green);
+background-image: url(images/gplay.png);
+color: var(--beige);
+padding: 4rem 0;
+position: relative;
+overflow: hidden;
+}
+
+.invitation-pattern {
+position: absolute;
+inset: 0;
+opacity: .1;
+}
+
+.invitation-hero-content {
+position: relative;
+z-index: 10;
+text-align: center;
+padding: 0 1rem;
+}
+
+.invitation-icon {
+width: 5rem;
+height: 5rem;
+background-color: var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 1.5rem;
+box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1);
+}
+
+.invitation-icon i {
+width: 2.5rem;
+height: 2.5rem;
+color: var(--primary-green);
+font-size: 2rem;
+}
+
+.invitation-title {
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: .5rem;
+color: var(--gold);
+font-family: 'Iransharp', sans-serif;
+}
+
+.invitation-subtitle {
+font-size: 1.25rem;
+opacity: .9;
+}
+
+.invitation-section {
+padding: 5rem 0;
+background-color: var(--beige);
+min-height: 70vh;
+}
+
+.invitation-card {
+background-color: #fff;
+border-radius: 1.5rem;
+box-shadow: 0 25px 50px -12px rgb(0 0 0 / .25);
+overflow: hidden;
+border-top: 4px solid var(--gold);
+max-width: 56rem;
+margin: -3rem auto 0;
+position: relative;
+z-index: 20;
+animation: fadeInUp 0.7s forwards;
+}
+
+.invitation-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 2rem;
+background: linear-gradient(to right, var(--primary-green), var(--dark-green));
+color: white;
+}
+
+.invitation-profile {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.profile-image {
+position: relative;
+width: 6rem;
+height: 6rem;
+border-radius: 50%;
+overflow: hidden;
+border: 3px solid var(--gold);
+}
+
+.profile-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.profile-badge {
+position: absolute;
+bottom: 0;
+right: 0;
+background-color: var(--gold);
+color: var(--primary-green);
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid white;
+}
+
+.profile-info h2 {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: .25rem;
+}
+
+.profile-role {
+font-size: .875rem;
+opacity: .9;
+margin-bottom: .5rem;
+}
+
+.profile-meta {
+font-size: .75rem;
+opacity: .8;
+}
+
+.invitation-stamp {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.stamp-icon {
+width: 3rem;
+height: 3rem;
+background-color: var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: .5rem;
+}
+
+.stamp-icon i {
+color: var(--primary-green);
+font-size: 1.5rem;
+}
+
+.stamp-text {
+font-size: .875rem;
+font-weight: 700;
+color: var(--gold);
+}
+
+.invitation-body {
+padding: 2rem;
+}
+
+.ceremony-info {
+display: flex;
+gap: 1.5rem;
+padding: 1.5rem;
+background-color: rgb(27 94 32 / .05);
+border-radius: 1rem;
+margin-bottom: 2rem;
+border-right: 4px solid var(--gold);
+}
+
+.ceremony-icon {
+width: 3rem;
+height: 3rem;
+background-color: var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+}
+
+.ceremony-icon i {
+color: var(--primary-green);
+font-size: 1.5rem;
+}
+
+.ceremony-details {
+flex: 1;
+}
+
+.ceremony-title {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--primary-green);
+margin-bottom: .25rem;
+}
+
+.ceremony-theme {
+color: var(--gray);
+margin-bottom: 1rem;
+}
+
+.ceremony-meta {
+display: flex;
+flex-wrap: wrap;
+gap: 1.5rem;
+font-size: .875rem;
+}
+
+.meta-item {
+display: flex;
+align-items: center;
+gap: .5rem;
+}
+
+.meta-item i {
+color: var(--gold);
+width: 1rem;
+height: 1rem;
+}
+
+.invitation-message {
+background-color: rgb(212 175 55 / .1);
+border-radius: 1rem;
+padding: 1.5rem;
+margin-bottom: 2rem;
+position: relative;
+overflow: hidden;
+}
+
+.message-icon {
+position: absolute;
+top: 1rem;
+left: 1rem;
+color: rgb(212 175 55 / .2);
+font-size: 3rem;
+}
+
+.message-content {
+position: relative;
+z-index: 1;
+}
+
+.message-content h4 {
+font-size: 1.25rem;
+font-weight: 700;
+color: var(--primary-green);
+margin-bottom: 1rem;
+}
+
+.message-content p {
+color: var(--dark-gray);
+line-height: 1.8;
+margin-bottom: 1rem;
+}
+
+.message-signature {
+text-align: left;
+margin-top: 1.5rem;
+padding-top: 1.5rem;
+border-top: 1px solid rgb(212 175 55 / .3);
+}
+
+.invitation-response {
+background-color: #f9fafb;
+border-radius: 1rem;
+padding: 2rem;
+border: 1px solid #f3f4f6;
+}
+
+.response-title {
+font-size: 1.25rem;
+font-weight: 700;
+color: var(--primary-green);
+margin-bottom: .5rem;
+display: flex;
+align-items: center;
+gap: .5rem;
+}
+
+.response-description {
+color: var(--gray);
+margin-bottom: 1.5rem;
+}
+
+.response-options {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+.response-options {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.response-option {
+cursor: pointer;
+}
+
+.response-input {
+display: none;
+}
+
+.option-card {
+background-color: white;
+border: 2px solid #e5e7eb;
+border-radius: .75rem;
+padding: 1.5rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+transition: all 0.3s;
+height: 100%;
+}
+
+.option-card:hover {
+border-color: var(--gold);
+transform: translateY(-2px);
+}
+
+.option-card.selected {
+border-color: var(--primary-green);
+background-color: rgb(27 94 32 / .05);
+}
+
+.option-yes .option-icon {
+color: var(--primary-green);
+}
+
+.option-no .option-icon {
+color: var(--dark-red);
+}
+
+.option-icon {
+font-size: 2rem;
+flex-shrink: 0;
+}
+
+.option-content h4 {
+font-size: 1rem;
+font-weight: 700;
+color: var(--dark-gray);
+margin-bottom: .25rem;
+}
+
+.option-content p {
+font-size: .875rem;
+color: var(--gray);
+}
+
+.response-message {
+margin-bottom: 1.5rem;
+}
+
+.response-message label {
+display: block;
+font-size: .875rem;
+font-weight: 500;
+color: var(--dark-gray);
+margin-bottom: .5rem;
+}
+
+.response-textarea {
+width: 100%;
+padding: .75rem 2.5rem .75rem 1rem;
+border: 1px solid #e5e7eb;
+border-radius: .375rem;
+background-color: #fff;
+color: var(--dark-gray);
+font-size: .875rem;
+min-height: 80px;
+resize: none;
+transition: all 0.2s;
+}
+
+.response-textarea:focus {
+outline: none;
+border-color: var(--primary-green);
+box-shadow: 0 0 0 3px rgb(27 94 32 / .1);
+}
+
+.response-submit {
+text-align: center;
+}
+
+.submit-response-btn {
+background-color: var(--primary-green);
+color: #fff;
+border: none;
+border-radius: .5rem;
+padding: 1rem 2rem;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: .5rem;
+margin: 0 auto 1rem;
+min-width: 200px;
+}
+
+.submit-response-btn:hover {
+background-color: var(--dark-green);
+transform: translateY(-2px);
+box-shadow: 0 10px 15px -3px rgb(27 94 32 / .3);
+}
+
+.response-notice {
+text-align: center;
+font-size: .875rem;
+color: var(--gray);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: .5rem;
+}
+
+.response-notice i {
+color: var(--gold);
+}
+
+/* Animation for invitation card */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+.volunteer-title,
+.invitation-title {
+font-size: 1.75rem;
+}
+
+text
+.volunteer-description,
+.invitation-subtitle {
+    font-size: 1rem;
+}
+
+.invitation-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.invitation-stamp {
+    align-self: flex-start;
+}
+
+.ceremony-info {
+    flex-direction: column;
+    text-align: center;
+}
+
+.ceremony-icon {
+    margin: 0 auto;
+}
+
+.ceremony-meta {
+    justify-content: center;
+}
+
+.option-card {
+    padding: 1rem;
+}
+
+.volunteer-form-card .form-content {
+    padding: 1.5rem;
+}
+}
