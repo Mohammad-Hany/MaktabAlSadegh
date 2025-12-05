@@ -6072,6 +6072,7 @@ font-size: 1.5rem;
 font-size: .875rem;
 font-weight: 700;
 color: var(--gold);
+text-align: center;
 }
 
 .invitation-body {
@@ -6370,7 +6371,7 @@ text
 }
 
 .invitation-header {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     gap: 1rem;
     padding: 1.5rem;
