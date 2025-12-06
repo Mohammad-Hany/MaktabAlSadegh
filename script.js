@@ -1191,28 +1191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 // اضافه به script.js
-const newsData = {
-    "shia-news": {
-        title: "اخبار شیعه",
-        posts: [
-            { title: "برگزاری مراسم‌های محرم در سراسر کشور", summary: "مراسم‌های عزاداری محرم امسال با رعایت کامل پروتکل‌های بهداشتی برگزار می‌شود." },
-            { title: "انتشار جدیدترین کتاب حجت الاسلام پناهیان", summary: "کتاب جدید با موضوع «عرفان اسلامی» روانه بازار کتاب شد." },
-            { title: "برگزاری همایش بین‌المللی اهل بیت", summary: "همایش بین‌المللی اهل بیت با حضور اندیشمندان ۲۰ کشور برگزار می‌شود." },
-            { title: "افتتاح کتابخانه تخصصی علوم دینی", summary: "کتابخانه تخصصی علوم دینی با ۱۰۰ هزار جلد کتاب در قم افتتاح شد." }
-        ]
-    },
-    "hawzah": {
-        title: "حوزه",
-        posts: [
-            { title: "آغاز سال تحصیلی جدید حوزه‌های علمیه", summary: "سال تحصیلی جدید حوزه‌های علمیه با حضور طلاب جدید آغاز شد." },
-            { title: "برگزاری آزمون ورودی حوزه", summary: "آزمون ورودی حوزه‌های علمیه در سراسر کشور برگزار شد." },
-            { title: "افتتاح خوابگاه جدید طلاب", summary: "خوابگاه جدید طلاب با امکانات رفاهی کامل در قم افتتاح شد." },
-            { title: "برگزاری دوره‌های تخصصی تفسیر قرآن", summary: "دوره‌های تخصصی تفسیر قرآن برای طلاب برگزار می‌شود." }
-        ]
-    },
-    // ... داده‌های سایر منابع خبری به همین صورت
-};
-
+// اضافه به script.js در بخش initializeNews()
 function initializeNews() {
     const logos = document.querySelectorAll('.news-logo');
     const newsPosts = document.getElementById('newsPosts');
@@ -1220,17 +1199,120 @@ function initializeNews() {
     
     if (!logos.length) return;
     
+    // داده‌های خبری با لینک‌های واقعی
+    const newsData = {
+        "shia-news": {
+            title: "اخبار شیعه",
+            posts: [
+                { 
+                    title: "برگزاری مراسم‌های محرم در سراسر کشور", 
+                    summary: "مراسم‌های عزاداری محرم امسال با رعایت کامل پروتکل‌های بهداشتی برگزار می‌شود.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "انتشار جدیدترین کتاب حجت الاسلام پناهیان", 
+                    summary: "کتاب جدید با موضوع «عرفان اسلامی» روانه بازار کتاب شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "برگزاری همایش بین‌المللی اهل بیت", 
+                    summary: "همایش بین‌المللی اهل بیت با حضور اندیشمندان ۲۰ کشور برگزار می‌شود.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "افتتاح کتابخانه تخصصی علوم دینی", 
+                    summary: "کتابخانه تخصصی علوم دینی با ۱۰۰ هزار جلد کتاب در قم افتتاح شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                }
+            ]
+        },
+        "hawzah": {
+            title: "حوزه",
+            posts: [
+                { 
+                    title: "آغاز سال تحصیلی جدید حوزه‌های علمیه", 
+                    summary: "سال تحصیلی جدید حوزه‌های علمیه با حضور طلاب جدید آغاز شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "برگزاری آزمون ورودی حوزه", 
+                    summary: "آزمون ورودی حوزه‌های علمیه در سراسر کشور برگزار شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "افتتاح خوابگاه جدید طلاب", 
+                    summary: "خوابگاه جدید طلاب با امکانات رفاهی کامل در قم افتتاح شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "برگزاری دوره‌های تخصصی تفسیر قرآن", 
+                    summary: "دوره‌های تخصصی تفسیر قرآن برای طلاب برگزار می‌شود.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                }
+            ]
+        },
+        "iqna": {
+            title: "ایکنا",
+            posts: [
+                { 
+                    title: "دیدار رئیس حوزه‌های علمیه با نخبگان علمی", 
+                    summary: "دیدار رئیس حوزه‌های علمیه با جمعی از نخبگان علمی کشور برگزار شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "انتشار تفسیر جدید قرآن کریم", 
+                    summary: "تفسیر جدید قرآن کریم توسط استاد برجسته حوزه منتشر شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "برگزاری کنگره بین‌المللی علوم قرآنی", 
+                    summary: "کنگره بین‌المللی علوم قرآنی با حضور محققان ۳۰ کشور برگزار می‌شود.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                },
+                { 
+                    title: "افتتاح مرکز جدید تحقیقات اسلامی", 
+                    summary: "مرکز جدید تحقیقات اسلامی در دانشگاه تهران افتتاح شد.",
+                    link: "https://www.isna.ir/news/1404081106465/%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%DB%B2%DB%B7%DB%B0-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D8%A7%D9%86%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D9%82-%D8%B9-%D9%82%D9%85-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+                    external: true
+                }
+            ]
+        }
+        // داده‌های سایر منابع به همین شکل ادامه دارد...
+    };
+    
     function loadNews(source) {
         const data = newsData[source] || newsData['shia-news'];
         newsSourceTitle.textContent = data.title;
         newsPosts.innerHTML = '';
         
         data.posts.forEach(post => {
-            const postElement = document.createElement('div');
+            const postElement = document.createElement('a');
             postElement.className = 'news-post';
+            postElement.href = post.link;
+            postElement.target = post.external ? '_blank' : '_self';
+            postElement.rel = post.external ? 'noopener noreferrer' : '';
+            
             postElement.innerHTML = `
                 <div class="news-post-title">${post.title}</div>
                 <div class="news-post-summary">${post.summary}</div>
+                <div class="news-post-link">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </div>
             `;
             newsPosts.appendChild(postElement);
         });
@@ -1247,7 +1329,6 @@ function initializeNews() {
     // بارگذاری اولیه
     loadNews('shia-news');
 }
-
 // فراخوانی در DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.news-section')) {

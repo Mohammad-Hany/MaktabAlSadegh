@@ -7441,3 +7441,70 @@ text
         font-size: 0.45rem;
     }
 }
+/* اضافه به styles.css */
+.news-post {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: rgb(245 245 220 / 0.5);
+    border-right: 3px solid var(--gold);
+    transition: all 0.3s;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.news-post:hover {
+    background-color: rgb(245 245 220 / 0.8);
+    transform: translateX(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.news-post-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.25rem;
+    transition: color 0.2s;
+}
+
+.news-post:hover .news-post-title {
+    color: var(--dark-green);
+}
+
+.news-post-summary {
+    font-size: 0.75rem;
+    color: var(--gray);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.news-post-link {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s;
+    color: var(--gold);
+}
+
+.news-post:hover .news-post-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.news-post-link svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+}
+
+/* برای موبایل */
+@media (max-width: 768px) {
+    .news-post-link {
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+}
