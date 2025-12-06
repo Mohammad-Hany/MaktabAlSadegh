@@ -7053,9 +7053,10 @@ text
 }
 
 .side-video-item .video-wrapper {
-    width: 100px;
+    width: 160px;
     flex-shrink: 0;
     margin-bottom: 0;
+    padding-bottom: 90px;
 }
 
 .video-info {
@@ -7086,10 +7087,6 @@ text
         grid-template-columns: 1.5fr 1fr;
         gap: 1.25rem;
     }
-    
-    .side-video-item .video-wrapper {
-        width: 90px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -7111,11 +7108,6 @@ text
         flex-direction: row;
         text-align: left;
     }
-    
-    .side-video-item .video-wrapper {
-        width: 100px;
-        margin-bottom: 0;
-    }
 }
 
 @media (max-width: 480px) {
@@ -7131,10 +7123,6 @@ text
         padding: 0.5rem;
     }
     
-    .side-video-item .video-wrapper {
-        width: 80px;
-    }
-    
     .video-info h4 {
         font-size: 0.75rem;
     }
@@ -7143,3 +7131,87 @@ text
         font-size: 0.65rem;
     }
 }
+/* اضافه به styles.css */
+/* کلاس‌های انیمیشن جدید */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate.fade-up {
+    transform: translateY(20px);
+}
+
+.scroll-animate.fade-down {
+    transform: translateY(-20px);
+}
+
+.scroll-animate.scale-in {
+    transform: scale(0.95);
+}
+
+.scroll-animate.visible.scale-in {
+    transform: scale(1);
+}
+
+/* تنظیمات سفارشی برای المان‌های مختلف */
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-buttons {
+    transition-delay: 0.2s;
+}
+
+.upcoming-event-card {
+    transition-delay: 0.3s;
+}
+
+.event-card,
+.founder-card,
+.gallery-item,
+.side-video-item,
+.news-logo,
+.news-post {
+    --animation-order: 1;
+}
+
+/* انیمیشن مخصوص هر بخش */
+.popular-events-grid > *,
+.founders-grid > *,
+.gallery-column-inner img,
+.side-videos > *,
+.news-logo-grid > * {
+    transform: translateY(20px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.popular-events-grid > *.visible,
+.founders-grid > *.visible,
+.gallery-column-inner img.visible,
+.side-videos > *.visible,
+.news-logo-grid > *.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تاخیر‌های متوالی برای آیتم‌های تکراری */
+.popular-events-grid > *:nth-child(1) { transition-delay: 0.05s; }
+.popular-events-grid > *:nth-child(2) { transition-delay: 0.05s; }
+.popular-events-grid > *:nth-child(3) { transition-delay: 0.05; }
+
+.founders-grid > *:nth-child(1) { transition-delay: 0.1s; }
+.founders-grid > *:nth-child(2) { transition-delay: 0.2s; }
+.founders-grid > *:nth-child(3) { transition-delay: 0.3s; }
+.founders-grid > *:nth-child(4) { transition-delay: 0.4s; }
+
+.side-videos > *:nth-child(1) { transition-delay: 0.1s; }
+.side-videos > *:nth-child(2) { transition-delay: 0.2s; }
+.side-videos > *:nth-child(3) { transition-delay: 0.3s; }
+.side-videos > *:nth-child(4) { transition-delay: 0.4s; }

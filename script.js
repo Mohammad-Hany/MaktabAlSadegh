@@ -1254,3 +1254,61 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeNews();
     }
 });
+// اضافه به script.js - بعد از تابع initializeAnimations
+function initializeScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // برای آیتم‌های تکراری در لیست‌ها
+                if (entry.target.classList.contains('popular-events-grid') || 
+                    entry.target.classList.contains('founders-grid') ||
+                    entry.target.classList.contains('side-videos') ||
+                    entry.target.classList.contains('gallery-column-inner') ||
+                    entry.target.classList.contains('news-logo-grid')) {
+                    
+                    const children = entry.target.children;
+                    Array.from(children).forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // مشاهده تمام المان‌های مهم
+    const elementsToObserve = [
+        '.scroll-animate',
+        '.hero-title', '.hero-subtitle', '.hero-description', '.hero-buttons',
+        '.upcoming-event-card',
+        '.popular-events-grid', '.founders-grid',
+        '.gallery-container', '.aparat-grid',
+        '.news-container',
+        '.event-card', '.founder-card', '.gallery-item',
+        '.side-video-item', '.news-logo', '.news-post',
+        '.section-title', '.section-header', '.section-header-center'
+    ];
+    
+    elementsToObserve.forEach(selector => {
+        document.querySelectorAll(selector).forEach(element => {
+            if (!element.classList.contains('scroll-animate')) {
+                element.classList.add('scroll-animate');
+            }
+            observer.observe(element);
+        });
+    });
+}
+
+// فراخوانی در DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeScrollAnimations, 500);
+});
