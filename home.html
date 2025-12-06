@@ -75,6 +75,7 @@
             <div class="mobile-menu-content">
                 <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
                 <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="signup.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خادمین</a>
                 <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
                 <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
                 <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
@@ -477,80 +478,90 @@
         </section>
 
         <!-- اضافه به home.html بعد از بخش گالری -->
-        <section class="aparat-showcase-section">
-            <div class="aparat-pattern"></div>
-            <div class="container">
-                <div class="section-header-center">
-                    <h2 class="section-title">ویدیوهای هیئت</h2>
-                    <div class="title-divider"></div>
-                    <p class="section-subtitle">برترین ویدیوهای مراسمات هیئت</p>
-                </div>
-
-                <div class="aparat-grid">
-                    <div class="main-video">
-                        <div class="video-wrapper">
-                            <div id="81785815478"><script type="text/JavaScript" src="https://www.aparat.com/embed/brh4l1e?data[rnddiv]=81785815478&data[responsive]=yes"></script></div>
-                        </div>
-                        <h3 class="video-title">سخنرانی ویژه محرم ۱۴۰۳</h3>
-                        <p class="video-description">حجت الاسلام پناهیان - موضوع: فلسفه قیام حسینی</p>
+        <!-- اضافه به home.html - بعد از بخش آپارات و قبل از بسته شدن section -->
+<!-- جایگزین کل بخش آپارات با نسخه جدید شامل لینک -->
+<section class="aparat-showcase-section">
+    <div class="aparat-pattern"></div>
+    <div class="container">
+        <div class="section-header-center">
+            <h2 class="section-title">ویدیوهای هیئت</h2>
+            <div class="title-divider"></div>
+            <p class="section-subtitle">برترین ویدیوهای مراسمات هیئت</p>
+        </div>
+        
+        <div class="aparat-grid">
+            <div class="main-video">
+                <div class="video-wrapper">
+                    <div id="aparatMainPlayer">
+                        <script type="text/javascript" src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatMainPlayer&data[responsive]=yes&titleShow=true"></script>
                     </div>
-
-                    <div class="side-videos">
-                        <div class="side-video-item">
-                            <div class="video-wrapper small">
-                                <div id="aparatSide1">
-                                    <script type="text/javascript"
-                                        src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide1&data[responsive]=yes&titleShow=true"></script>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h4>مداحی محرم</h4>
-                                <p>حاج علی اکبری</p>
-                            </div>
+                </div>
+                <h3 class="video-title">سخنرانی ویژه محرم ۱۴۰۳</h3>
+                <p class="video-description">حجت الاسلام پناهیان - موضوع: فلسفه قیام حسینی</p>
+            </div>
+            
+            <div class="side-videos">
+                <div class="side-video-item">
+                    <div class="video-wrapper small">
+                        <div id="aparatSide1">
+                            <script type="text/javascript" src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide1&data[responsive]=yes&titleShow=true"></script>
                         </div>
-
-                        <div class="side-video-item">
-                            <div class="video-wrapper small">
-                                <div id="aparatSide2">
-                                    <script type="text/javascript"
-                                        src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide2&data[responsive]=yes&titleShow=true"></script>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h4>جشن نیمه شعبان</h4>
-                                <p>مراسم کودکان</p>
-                            </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>مداحی محرم</h4>
+                        <p>حاج علی اکبری</p>
+                    </div>
+                </div>
+                
+                <div class="side-video-item">
+                    <div class="video-wrapper small">
+                        <div id="aparatSide2">
+                            <script type="text/javascript" src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide2&data[responsive]=yes&titleShow=true"></script>
                         </div>
-
-                        <div class="side-video-item">
-                            <div class="video-wrapper small">
-                                <div id="aparatSide3">
-                                    <script type="text/javascript"
-                                        src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide3&data[responsive]=yes&titleShow=true"></script>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h4>سخنرانی اخلاقی</h4>
-                                <p>حجت الاسلام محمدی</p>
-                            </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>جشن نیمه شعبان</h4>
+                        <p>مراسم کودکان</p>
+                    </div>
+                </div>
+                
+                <div class="side-video-item">
+                    <div class="video-wrapper small">
+                        <div id="aparatSide3">
+                            <script type="text/javascript" src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide3&data[responsive]=yes&titleShow=true"></script>
                         </div>
-
-                        <div class="side-video-item">
-                            <div class="video-wrapper small">
-                                <div id="aparatSide4">
-                                    <script type="text/javascript"
-                                        src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide4&data[responsive]=yes&titleShow=true"></script>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h4>دعای کمیل</h4>
-                                <p>جمعه‌های هیئت</p>
-                            </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>سخنرانی اخلاقی</h4>
+                        <p>حجت الاسلام محمدی</p>
+                    </div>
+                </div>
+                
+                <div class="side-video-item">
+                    <div class="video-wrapper small">
+                        <div id="aparatSide4">
+                            <script type="text/javascript" src="https://www.aparat.com/embed/yirych3?data[rnddiv]=aparatSide4&data[responsive]=yes&titleShow=true"></script>
                         </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>دعای کمیل</h4>
+                        <p>جمعه‌های هیئت</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- لینک جدید اضافه شده -->
+        <div class="aparat-more-link">
+            <a href="videos.html" class="aparat-link">
+                مشاهده ویدیوهای بیشتر
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
 
         <!-- اضافه به home.html بعد از بخش آپارات -->
         <section class="news-section">

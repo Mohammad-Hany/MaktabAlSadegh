@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>صفحه مورد نظر پیدا نشد - هیئت مکتب الصادق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل‌های اختصاصی صفحات خطا */
+        :root {
+            --animation-duration: 20s;
+        }
+        
+        .error-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            background-color: var(--beige);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .error-animation {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .error-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            opacity: 0.1;
+        }
+        
+        .error-shape-1 {
+            width: 150px;
+            height: 150px;
+            top: 25px;
+            right: 25px;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .error-shape-2 {
+            width: 100px;
+            height: 100px;
+            bottom: 40px;
+            left: 30px;
+            animation: float 10s ease-in-out infinite reverse;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+        }
+        
+        .error-shape-3 {
+            width: 80px;
+            height: 80px;
+            top: 60px;
+            left: 20px;
+            animation: float 12s ease-in-out infinite;
+            background: linear-gradient(135deg, var(--dark-red), #b30000);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-15px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(240deg);
+            }
+        }
+        
+        .error-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: var(--primary-green);
+            z-index: 2;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+            font-family: 'Iransharp', sans-serif;
+        }
+        
+        .error-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.7s;
+            font-family: 'Iransharp', sans-serif;
+        }
+        
+        .error-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.9s;
+        }
+        
+        .error-primary-btn {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Iransharp', sans-serif;
+            box-shadow: 0 4px 15px rgba(27, 94, 32, 0.2);
+        }
+        
+        .error-primary-btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.3);
+        }
+        
+        .error-secondary-link {
+            color: var(--primary-green);
+            text-decoration: none;
+            padding: 0.875rem 1.5rem;
+            border: 1px solid var(--primary-green);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Iransharp', sans-serif;
+        }
+        
+        .error-secondary-link:hover {
+            background-color: rgba(27, 94, 32, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        /* استایل‌های خاص برای صفحه ۵۰۰ */
+        .error-500 .error-shape-1 {
+            background: linear-gradient(135deg, var(--dark-red), #b30000);
+        }
+        
+        .error-500 .error-shape-2 {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+        }
+        
+        .error-500 .error-shape-3 {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+        }
+        
+        .error-500 .error-icon {
+            color: var(--dark-red);
+        }
+        
+        /* انیمیشن‌های ورود با اسکرول */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .error-section {
+                min-height: 70vh;
+                padding: 2rem 1rem;
+            }
+            
+            .error-animation {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 2rem;
+            }
+            
+            .error-shape-1 {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .error-shape-2 {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .error-shape-3 {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .error-icon {
+                font-size: 3rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .error-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .error-primary-btn,
+            .error-secondary-link {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-animation {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .error-shape-1 {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .error-shape-2 {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .error-shape-3 {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .error-title {
+                font-size: 1.75rem;
+            }
+            
+            .error-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-bar">
+        <div class="notification-content">
+            <span class="notification-ping"></span>
+            <span class="notification-text">پخش زنده مراسم دعای کمیل</span>
+            <a href="#live" class="notification-link" onclick="openLiveStream()">تماشا کنید</a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="home.html" class="logo-area mobile-logo-visible">
+                <div class="logo-icon">
+                    <img src="images/logo.png">
+                </div>
+                <div class="logo-text">
+                    <h1>هیئت مکتب الصادق</h1>
+                    <span>محفل رهروان شهدا</span>
+                </div>
+            </a>
+            <div class="desktop-nav">
+                <a href="home.html" class="nav-link">خانه</a>
+                <a href="events.html" class="nav-link">مراسم‌ها</a>
+                <a href="about-us.html" class="nav-link">درباره ما</a>
+                <a href="contact-us.html" class="nav-link">تماس با ما</a>
+            </div>
+            <div class="nav-cta">
+                <a href="donate.html" class="donate-btn">حمایت مالی</a>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="home.html" class="mobile-menu-logo" onclick="toggleMobileMenu()">
+                    <div class="mobile-logo-icon">
+                        <img src="images/logo.png">
+                    </div>
+                    <div class="mobile-logo-text">
+                        <h2>هیئت مکتب الصادق</h2>
+                        <span>محفل رهروان شهدا</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-content">
+                <a href="home.html" class="mobile-nav-link" onclick="toggleMobileMenu()">خانه</a>
+                <a href="events.html" class="mobile-nav-link" onclick="toggleMobileMenu()">مراسم‌ها</a>
+                <a href="about-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">درباره ما</a>
+                <a href="contact-us.html" class="mobile-nav-link" onclick="toggleMobileMenu()">تماس با ما</a>
+                <a href="donate.html" class="mobile-donate-btn" onclick="toggleMobileMenu()">حمایت مالی</a>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    </nav>
+
+    <main id="mainContent">
+        <!-- PAGE 1: 404 Not Found -->
+        <section class="error-section" id="error404">
+            <div class="error-container scroll-animate">
+                <div class="error-animation">
+                    <div class="error-shape error-shape-1"></div>
+                    <div class="error-shape error-shape-2"></div>
+                    <div class="error-shape error-shape-3"></div>
+                    <div class="error-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+                <h1 class="error-title scroll-animate">صفحه مورد نظر پیدا نشد</h1>
+                <p class="error-subtitle scroll-animate">
+                    ممکن است صفحه حذف شده باشد یا آدرس را اشتباه وارد کرده‌اید.
+                </p>
+                
+                <div class="error-buttons scroll-animate">
+                    <a href="home.html" class="error-primary-btn">
+                        <i class="fas fa-home"></i>
+                        بازگشت به صفحه اصلی
+                    </a>
+                    <a href="contact-us.html" class="error-secondary-link">
+                        <i class="fas fa-phone-alt"></i>
+                        تماس با ما
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-inner">
+                                <img src="images/logo.svg">
+                            </div>
+                        </div>
+                        <h2 class="footer-logo-text">هیئت مکتب الصادق</h2>
+                    </div>
+                    <p class="footer-description">هیئت مذهبی فرهنگی مکتب الصادق، محفلی برای دلدادگان اهل بیت (علیهم السلام) و ترویج فرهنگ عاشورایی.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><img class="icon-eitaa" src="images/aparat.svg"></a>
+                        <a href="#" class="social-icon"><img class="icon-eitaa" src="images/icon-eitaa.svg"></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">دسترسی سریع</h3>
+                    <ul class="footer-menu">
+                        <li><a href="home.html"><span class="menu-bullet"></span>صفحه اصلی</a></li>
+                        <li><a href="events.html"><span class="menu-bullet"></span>مراسم‌ها</a></li>
+                        <li><a href="about-us.html"><span class="menu-bullet"></span>درباره هیئت</a></li>
+                        <li><a href="contact-us.html"><span class="menu-bullet"></span>ارتباط با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 class="footer-title">ارتباط با ما</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i><span>تهران، میدان انقلاب، خیابان کارگر شمالی، مسجد دانشگاه تهران</span></li>
+                        <li><i class="fas fa-phone"></i><span dir="ltr">021 - 8888 9999</span></li>
+                        <li><i class="far fa-envelope"></i><span>info@ansar-heyat.ir</span></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">عضویت در خبرنامه</h3>
+                    <p class="newsletter-description">برای اطلاع از زمان برگزاری مراسمات، شماره همراه خود را وارد کنید.</p>
+                    <div class="newsletter-form">
+                        <input type="text" placeholder="09xxxxxxxxx" class="newsletter-input" dir="ltr">
+                        <button class="newsletter-btn">عضویت</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۱۴۰۳ تمامی حقوق برای هیئت مکتب الصادق محفوظ است.</p>
+                <a href="#" class="creator-link">
+                    <span>Created with love by</span>
+                    <span class="creator-name">Mohammad Hany Feyz</span>
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+    <script>
+        // اسکریپت انیمیشن‌های اسکرول
+        function initializeErrorPageAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // تابع تلاش مجدد برای صفحه ۵۰۰
+        function retryRequest() {
+            const toast = document.getElementById('toast');
+            if (toast) {
+                toast.textContent = 'در حال تلاش برای بارگذاری مجدد...';
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.textContent = 'درخواست مجدد ارسال شد';
+                }, 1000);
+                
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeErrorPageAnimations();
+        });
+    </script>
+</body>
+</html>
