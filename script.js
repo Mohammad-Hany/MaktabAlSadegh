@@ -1190,3 +1190,67 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: false });
     }
 });
+// اضافه به script.js
+const newsData = {
+    "shia-news": {
+        title: "اخبار شیعه",
+        posts: [
+            { title: "برگزاری مراسم‌های محرم در سراسر کشور", summary: "مراسم‌های عزاداری محرم امسال با رعایت کامل پروتکل‌های بهداشتی برگزار می‌شود." },
+            { title: "انتشار جدیدترین کتاب حجت الاسلام پناهیان", summary: "کتاب جدید با موضوع «عرفان اسلامی» روانه بازار کتاب شد." },
+            { title: "برگزاری همایش بین‌المللی اهل بیت", summary: "همایش بین‌المللی اهل بیت با حضور اندیشمندان ۲۰ کشور برگزار می‌شود." },
+            { title: "افتتاح کتابخانه تخصصی علوم دینی", summary: "کتابخانه تخصصی علوم دینی با ۱۰۰ هزار جلد کتاب در قم افتتاح شد." }
+        ]
+    },
+    "hawzah": {
+        title: "حوزه",
+        posts: [
+            { title: "آغاز سال تحصیلی جدید حوزه‌های علمیه", summary: "سال تحصیلی جدید حوزه‌های علمیه با حضور طلاب جدید آغاز شد." },
+            { title: "برگزاری آزمون ورودی حوزه", summary: "آزمون ورودی حوزه‌های علمیه در سراسر کشور برگزار شد." },
+            { title: "افتتاح خوابگاه جدید طلاب", summary: "خوابگاه جدید طلاب با امکانات رفاهی کامل در قم افتتاح شد." },
+            { title: "برگزاری دوره‌های تخصصی تفسیر قرآن", summary: "دوره‌های تخصصی تفسیر قرآن برای طلاب برگزار می‌شود." }
+        ]
+    },
+    // ... داده‌های سایر منابع خبری به همین صورت
+};
+
+function initializeNews() {
+    const logos = document.querySelectorAll('.news-logo');
+    const newsPosts = document.getElementById('newsPosts');
+    const newsSourceTitle = document.getElementById('newsSourceTitle');
+    
+    if (!logos.length) return;
+    
+    function loadNews(source) {
+        const data = newsData[source] || newsData['shia-news'];
+        newsSourceTitle.textContent = data.title;
+        newsPosts.innerHTML = '';
+        
+        data.posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.className = 'news-post';
+            postElement.innerHTML = `
+                <div class="news-post-title">${post.title}</div>
+                <div class="news-post-summary">${post.summary}</div>
+            `;
+            newsPosts.appendChild(postElement);
+        });
+    }
+    
+    logos.forEach(logo => {
+        logo.addEventListener('click', function() {
+            logos.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            loadNews(this.dataset.source);
+        });
+    });
+    
+    // بارگذاری اولیه
+    loadNews('shia-news');
+}
+
+// فراخوانی در DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.news-section')) {
+        initializeNews();
+    }
+});
