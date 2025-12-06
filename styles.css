@@ -4862,6 +4862,7 @@ margin-right: auto; / Push it to the left */
     
     .comment-card {
         min-width: 90vw;
+        max-width: 300px;
     }
     
     .gallery-grid {
